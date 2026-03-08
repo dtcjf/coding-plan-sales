@@ -5,7 +5,7 @@ export interface LMArenaModel {
   model: string;
   organization: string;
   arenaScore: number;
-  95CI: string;
+  '95CI': string;
   votes: number;
   category: 'coding' | 'general';
 }

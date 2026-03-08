@@ -16,17 +16,17 @@ export default function LeaderboardPage() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-indigo-600 to-purple-700 text-white py-16 px-4">
+        <section className="bg-gradient-to-br from-indigo-600 to-purple-700 text-white py-20 px-4">
           <div className="max-w-6xl mx-auto text-center">
             <div className="flex justify-center mb-6">
               <div className="bg-white/20 p-4 rounded-full">
                 <Trophy className="h-12 w-12 text-white" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
               AI 模型 Coding 能力排行榜
             </h1>
-            <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-indigo-100 mb-8 max-w-3xl mx-auto">
               基于 LM Arena 和 SWE-bench Verified 的权威评测数据
             </p>
           </div>
