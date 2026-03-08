@@ -35,3 +35,5 @@ coverage/
 # Logs
 logs/
 *.log
+
+.next/

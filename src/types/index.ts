@@ -1,3 +1,16 @@
+export interface PricingTier {
+  name: string;
+  monthly: number;
+  yearly: number;
+  description?: string;
+  models?: string[];
+  requestsPerMonth?: number;
+  tokensPerMonth?: number;
+  maxContextLength?: number;
+  contextWindow?: string;
+  speed?: string;
+}
+
 export interface CodingPlan {
   id: string;
   name: string;
@@ -7,11 +20,21 @@ export interface CodingPlan {
     monthly: number;
     yearly: number;
     currency: string;
+    tier?: string;
   };
+  pricingTiers?: PricingTier[];
   limits: {
     requestsPerMonth: number;
     tokensPerMonth: number;
     maxContextLength: number;
+  };
+  modelSpecs?: {
+    params: string;
+    context: string;
+    multimodal: boolean;
+    highlightParams?: boolean;
+    highlightContext?: boolean;
+    highlightMultimodal?: boolean;
   };
   features: string[];
   models: string[];

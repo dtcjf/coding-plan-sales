@@ -30,7 +30,7 @@ export function Header() {
               href="/leaderboard"
               className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
-              能力排行榜
+              排行榜
             </a>
             <a
               href="#"
@@ -72,7 +72,7 @@ export function Header() {
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              能力排行榜
+              排行榜
             </a>
             <a
               href="#"

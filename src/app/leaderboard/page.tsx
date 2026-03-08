@@ -47,8 +47,7 @@ export default function LeaderboardPage() {
                   的编程评测基准，测试模型解决实际软件工程问题的能力。
                 </p>
                 <p className="text-xs text-gray-500">
-                  数据更新时间：2024年12月 | 数据来源：LMSYS Chatbot Arena &
-                  SWE-bench
+                  数据更新时间：2026年3月4日 | 数据来源：arena.ai & swebench.com
                 </p>
               </div>
             </div>

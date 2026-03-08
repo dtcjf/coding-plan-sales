@@ -65,22 +65,19 @@ export function LeaderboardTabs() {
             <table className="w-full">
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     排名
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     模型
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     机构
                   </th>
-                  <th className="px-4 py-3 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     Arena Score
                   </th>
                   <th className="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                    95% CI
-                  </th>
-                  <th className="px-4 py-3 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     投票数
                   </th>
                 </tr>
@@ -93,8 +90,8 @@ export function LeaderboardTabs() {
                       index < 3 ? 'bg-yellow-50/30' : ''
                     }`}
                   >
-                    <td className="px-4 py-3 whitespace-nowrap">
-                      <div className="flex items-center">
+                    <td className="px-4 py-3 whitespace-nowrap text-center">
+                      <div className="flex items-center justify-center">
                         {index === 0 && (
                           <Trophy className="h-5 w-5 text-yellow-500 mr-1" />
                         )}
@@ -119,12 +116,12 @@ export function LeaderboardTabs() {
                         </span>
                       </div>
                     </td>
-                    <td className="px-4 py-3 whitespace-nowrap">
+                    <td className="px-4 py-3 whitespace-nowrap text-center">
                       <span className="font-medium text-gray-900">
                         {model.model}
                       </span>
                     </td>
-                    <td className="px-4 py-3 whitespace-nowrap">
+                    <td className="px-4 py-3 whitespace-nowrap text-center">
                       <span
                         className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${
                           organizationColors[model.organization] ||
@@ -134,17 +131,12 @@ export function LeaderboardTabs() {
                         {model.organization}
                       </span>
                     </td>
-                    <td className="px-4 py-3 whitespace-nowrap text-right">
+                    <td className="px-4 py-3 whitespace-nowrap text-center">
                       <span className="font-bold text-gray-900">
                         {model.arenaScore}
                       </span>
                     </td>
                     <td className="px-4 py-3 whitespace-nowrap text-center">
-                      <span className="text-sm text-gray-500">
-                        {model['95CI']}
-                      </span>
-                    </td>
-                    <td className="px-4 py-3 whitespace-nowrap text-right">
                       <span className="text-sm text-gray-600">
                         {model.votes.toLocaleString()}
                       </span>
@@ -157,16 +149,16 @@ export function LeaderboardTabs() {
           <div className="px-4 py-3 bg-gray-50 border-t border-gray-200 text-sm text-gray-500">
             数据来源：{' '}
             <a
-              href="https://chat.lmsys.org/"
+              href="https://www.arena.ai"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 inline-flex items-center"
             >
-              LMSYS Chatbot Arena
+              LM Arena
               <ExternalLink className="h-3 w-3 ml-1" />
             </a>
             <span className="mx-2">|</span>
-            数据更新时间：2024年12月
+            数据更新时间：2026年3月4日
           </div>
         </div>
       )}
@@ -178,22 +170,22 @@ export function LeaderboardTabs() {
             <table className="w-full">
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     排名
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     模型
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     机构
                   </th>
                   <th className="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                    类型
-                  </th>
-                  <th className="px-4 py-3 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     Pass@1
                   </th>
-                  <th className="px-4 py-3 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    平均成本
+                  </th>
+                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     解决数/总数
                   </th>
                   <th className="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">
@@ -210,7 +202,7 @@ export function LeaderboardTabs() {
                     }`}
                   >
                     <td className="px-4 py-3 whitespace-nowrap">
-                      <div className="flex items-center">
+                      <div className="flex items-center justify-center">
                         {index === 0 && (
                           <Trophy className="h-5 w-5 text-yellow-500 mr-1" />
                         )}
@@ -235,12 +227,12 @@ export function LeaderboardTabs() {
                         </span>
                       </div>
                     </td>
-                    <td className="px-4 py-3 whitespace-nowrap">
+                    <td className="px-4 py-3 whitespace-nowrap text-center">
                       <span className="font-medium text-gray-900">
                         {model.model}
                       </span>
                     </td>
-                    <td className="px-4 py-3 whitespace-nowrap">
+                    <td className="px-4 py-3 whitespace-nowrap text-center">
                       <span
                         className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${
                           organizationColors[model.organization] ||
@@ -251,18 +243,7 @@ export function LeaderboardTabs() {
                       </span>
                     </td>
                     <td className="px-4 py-3 whitespace-nowrap text-center">
-                      <span
-                        className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
-                          model.type === 'open'
-                            ? 'bg-green-100 text-green-800'
-                            : 'bg-blue-100 text-blue-800'
-                        }`}
-                      >
-                        {model.type === 'open' ? '开源' : '闭源'}
-                      </span>
-                    </td>
-                    <td className="px-4 py-3 whitespace-nowrap text-right">
-                      <div className="flex items-center justify-end gap-2">
+                      <div className="flex items-center justify-center gap-2">
                         <span className="font-bold text-gray-900">
                           {model.passRate.toFixed(1)}%
                         </span>
@@ -274,7 +255,12 @@ export function LeaderboardTabs() {
                         </div>
                       </div>
                     </td>
-                    <td className="px-4 py-3 whitespace-nowrap text-right">
+                    <td className="px-4 py-3 whitespace-nowrap text-center">
+                      <span className="text-sm text-gray-600">
+                        ${model.avgCost.toFixed(2)}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 whitespace-nowrap text-center">
                       <span className="text-sm text-gray-600">
                         {model.solvedInstances}/{model.totalInstances}
                       </span>
@@ -309,7 +295,7 @@ export function LeaderboardTabs() {
       {/* Summary Stats */}
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200">
-          <div className="text-2xl font-bold text-blue-900">10+</div>
+          <div className="text-2xl font-bold text-blue-900">14</div>
           <div className="text-sm text-blue-700">主流模型对比</div>
         </div>
         <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4 border border-purple-200">
@@ -317,8 +303,8 @@ export function LeaderboardTabs() {
           <div className="text-sm text-purple-700">SWE-bench 测试集</div>
         </div>
         <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 border border-green-200">
-          <div className="text-2xl font-bold text-green-900">实时</div>
-          <div className="text-sm text-green-700">数据定期更新</div>
+          <div className="text-2xl font-bold text-green-900">2026-03</div>
+          <div className="text-sm text-green-700">最新数据更新</div>
         </div>
       </div>
     </div>

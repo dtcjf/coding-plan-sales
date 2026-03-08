@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Coding Plan 对比 | 主流AI编程助手订阅对比',
@@ -23,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
-      <body className="min-h-screen bg-gray-50">{children}</body>
+      <body className={`${inter.className} min-h-screen bg-gray-50`}>{children}</body>
     </html>
   );
 }
