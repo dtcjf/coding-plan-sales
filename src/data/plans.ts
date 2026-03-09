@@ -274,7 +274,7 @@ export const codingPlans: CodingPlan[] = [
       '专属 API Key (sk-sp-开头)',
       '200ms 级低延迟，微信生态深度集成',
     ],
-    models: ['hunyuan-2.0', 'minimax-m2.5', 'kimi-k2.5', 'glm-5'],
+    models: ['Tencent HY 2.0 Instruct', 'Tencent HY 2.0 Think', 'Hunyuan-T1', 'Hunyuan-TurboS', 'MiniMax-M2.5', 'Kimi-K2.5', 'GLM-5'],
     affiliateLink: 'https://cloud.tencent.com/document/product/1772/128947',
     affiliateCommission: '推广链接佣金',
     notes: {
