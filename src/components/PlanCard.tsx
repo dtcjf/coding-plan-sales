@@ -77,29 +77,45 @@ export function PlanCard({ plan }: PlanCardProps) {
       </div>
 
       {/* Stats */}
-      <div className="px-6 py-4 bg-gray-50 grid grid-cols-3 gap-4">
-        <div className="text-center">
-          <Cpu className="w-4 h-4 text-yellow-500 mx-auto mb-1" />
-          <p className="text-xs text-gray-500">参数量</p>
-          <p className={`font-semibold text-xs ${plan.modelSpecs?.highlightParams ? 'text-red-600' : 'text-gray-900'}`}>
-            {plan.modelSpecs?.params || '-'}
-          </p>
+      {['阿里云', '火山引擎', '腾讯云'].includes(plan.provider) ? (
+        <div className="px-6 py-4 bg-gray-50">
+          <p className="text-xs text-gray-500 mb-2">可调用模型</p>
+          <div className="flex flex-wrap gap-1">
+            {plan.models?.map((model, index) => (
+              <span
+                key={index}
+                className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200"
+              >
+                {model}
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="text-center">
-          <MessageSquare className="w-4 h-4 text-blue-500 mx-auto mb-1" />
-          <p className="text-xs text-gray-500">上下文</p>
-          <p className={`font-semibold text-xs ${plan.modelSpecs?.highlightContext ? 'text-red-600' : 'text-gray-900'}`}>
-            {plan.modelSpecs?.context || formatNumber(plan.limits.maxContextLength)}
-          </p>
+      ) : (
+        <div className="px-6 py-4 bg-gray-50 grid grid-cols-3 gap-4">
+          <div className="text-center">
+            <Cpu className="w-4 h-4 text-yellow-500 mx-auto mb-1" />
+            <p className="text-xs text-gray-500">参数量</p>
+            <p className={`font-semibold text-xs ${plan.modelSpecs?.highlightParams ? 'text-red-600' : 'text-gray-900'}`}>
+              {plan.modelSpecs?.params || '-'}
+            </p>
+          </div>
+          <div className="text-center">
+            <MessageSquare className="w-4 h-4 text-blue-500 mx-auto mb-1" />
+            <p className="text-xs text-gray-500">上下文</p>
+            <p className={`font-semibold text-xs ${plan.modelSpecs?.highlightContext ? 'text-red-600' : 'text-gray-900'}`}>
+              {plan.modelSpecs?.context || formatNumber(plan.limits.maxContextLength)}
+            </p>
+          </div>
+          <div className="text-center">
+            <Image className="w-4 h-4 text-green-500 mx-auto mb-1" />
+            <p className="text-xs text-gray-500">多模态</p>
+            <p className={`font-semibold text-xs ${plan.modelSpecs?.highlightMultimodal ? 'text-red-600' : 'text-gray-900'}`}>
+              {plan.modelSpecs?.multimodal ? '是' : '否'}
+            </p>
+          </div>
         </div>
-        <div className="text-center">
-          <Image className="w-4 h-4 text-green-500 mx-auto mb-1" />
-          <p className="text-xs text-gray-500">多模态</p>
-          <p className={`font-semibold text-xs ${plan.modelSpecs?.highlightMultimodal ? 'text-red-600' : 'text-gray-900'}`}>
-            {plan.modelSpecs?.multimodal ? '是' : '否'}
-          </p>
-        </div>
-      </div>
+      )}
 
       {/* Features */}
       <div className="p-6 flex-grow">
