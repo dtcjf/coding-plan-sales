@@ -47,6 +47,12 @@ export const codingPlans: CodingPlan[] = [
       enterprise: '为全球最严苛的开发团队提供毫秒级延迟、金融级合规与无限扩展的模型能力',
       subscribe: '支持按月/按季度/按年订阅',
     },
+    benchmark: {
+      lmArenaRank: '第 3 名',
+      lmArenaUrl: 'https://lmarena.ai',
+      sweBenchVerified: '78.0%',
+      sweBenchPro: '85.0%',
+    },
   },
   {
     id: 'moonshot',
@@ -94,6 +100,11 @@ export const codingPlans: CodingPlan[] = [
       enterprise: '企业版可联系销售获取定制化服务，支持大规模团队协作',
       subscribe: '支持按月/按季度/按年订阅，连续包年最高立省 ¥240',
     },
+    benchmark: {
+      lmArenaRank: '第 5 名',
+      lmArenaUrl: 'https://lmarena.ai',
+      sweBenchVerified: '72.0%',
+    },
   },
   {
     id: 'glm',
@@ -137,6 +148,11 @@ export const codingPlans: CodingPlan[] = [
       price: 'API 定价：输入 ¥0.5/百万 tokens，输出 ¥2/百万 tokens（具体以官网为准）',
       enterprise: '为企业客户提供定制化服务，支持私有化部署和企业级支持',
       subscribe: '支持按月/按季度/按年订阅，按年订阅享 7 折优惠',
+    },
+    benchmark: {
+      lmArenaRank: '第 4 名',
+      lmArenaUrl: 'https://lmarena.ai',
+      sweBenchVerified: '72.8%',
     },
   },
   // 云厂商 Coding Plan

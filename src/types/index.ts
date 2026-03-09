@@ -47,6 +47,12 @@ export interface CodingPlan {
     enterprise?: string;
     subscribe?: string;
   };
+  benchmark?: {
+    lmArenaRank?: string;
+    lmArenaUrl?: string;
+    sweBenchVerified?: string;
+    sweBenchPro?: string;
+  };
 }
 
 export interface ComparisonFilter {
