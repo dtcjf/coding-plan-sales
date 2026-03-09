@@ -140,7 +140,7 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
                   <tr className="border-b border-gray-200">
                     <th className="text-left py-2 text-xs font-semibold text-gray-500 uppercase">档位</th>
                     <th className="text-left py-2 text-xs font-semibold text-gray-500 uppercase">可用模型</th>
-                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">请求/月</th>
+                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">用量/5h</th>
                     <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">月付</th>
                     <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">年付</th>
                   </tr>
@@ -156,7 +156,7 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
                         {tier.models?.join(', ')}
                       </td>
                       <td className="py-3 text-center text-gray-600">
-                        {tier.requestsPerMonth === -1 ? '无限' : formatNumber(tier.requestsPerMonth || 0)}
+                        {tier.promptsPer5Hours === -1 ? '无限' : tier.promptsPer5Hours || '-'}
                       </td>
                       <td className="py-3 text-right font-semibold text-gray-900">¥{tier.monthly}</td>
                       <td className="py-3 text-right font-semibold text-gray-900">¥{tier.yearly}</td>
