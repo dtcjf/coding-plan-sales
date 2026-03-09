@@ -65,8 +65,10 @@ export const codingPlans: CodingPlan[] = [
       tier: 'Andante',
     },
     pricingTiers: [
-      { name: 'Andante', monthly: 49, yearly: 468, description: '基础版', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '300-1200', maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
-      { name: 'Moderato', monthly: 99, yearly: 948, description: '推荐版', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '更大额度', maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
+      { name: 'Andante', monthly: 49, yearly: 468, description: '入门版', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '300-1200', maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
+      { name: 'Moderato', monthly: 99, yearly: 948, description: '进阶版', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '更大额度', maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
+      { name: 'Allegretto', monthly: 199, yearly: 1908, description: '高级版', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '更大额度', maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
+      { name: 'Allegro', monthly: 699, yearly: 6708, description: '旗舰版', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '更大额度', maxContextLength: 256000, contextWindow: '256K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: -1,

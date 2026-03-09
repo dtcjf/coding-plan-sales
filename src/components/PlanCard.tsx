@@ -54,11 +54,6 @@ export function PlanCard({ plan }: PlanCardProps) {
               <h3 className="text-xl font-bold text-gray-900">{plan.name}</h3>
             </div>
           </div>
-          {plan.affiliateCommission && (
-            <span className="badge bg-green-100 text-green-800">
-              推广赚佣
-            </span>
-          )}
         </div>
 
         {/* Price */}
@@ -190,11 +185,6 @@ export function PlanCard({ plan }: PlanCardProps) {
           <span>查看详情</span>
           <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
         </button>
-        {plan.affiliateCommission && (
-          <p className="text-xs text-center text-gray-400 mt-2">
-            通过此链接注册，支持我们持续维护本站
-          </p>
-        )}
       </div>
 
       {/* Modal */}

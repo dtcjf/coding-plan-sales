@@ -38,12 +38,6 @@ export function Header() {
             >
               排行榜
             </a>
-            <a
-              href="#"
-              className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium transition-colors"
-            >
-              获取推荐
-            </a>
           </nav>
 
           {/* Mobile menu button */}
@@ -86,13 +80,6 @@ export function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               排行榜
-            </a>
-            <a
-              href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              获取推荐
             </a>
           </div>
         </div>
