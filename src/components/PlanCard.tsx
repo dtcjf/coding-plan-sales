@@ -35,6 +35,7 @@ export function PlanCard({ plan }: PlanCardProps) {
   };
 
   return (
+    <>
     <div className="card flex flex-col h-full">
       {/* Header */}
       <div className="p-6 border-b border-gray-100">
@@ -187,13 +188,16 @@ export function PlanCard({ plan }: PlanCardProps) {
         </button>
       </div>
 
-      {/* Modal */}
+      {/* Modal - rendered outside the card to avoid overflow clipping */}
+    </div>
+    {isModalOpen && (
       <PlanModal
         key={plan.id}
         plan={plan}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-    </div>
+    )}
+    </>
   );
 }
