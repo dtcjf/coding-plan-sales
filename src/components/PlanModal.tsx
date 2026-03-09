@@ -10,7 +10,7 @@ interface PlanModalProps {
 }
 
 export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
-  if (!isOpen) return null;
+  if (!isOpen || !plan) return null;
 
   const formatNumber = (num: number) => {
     if (num === -1) return '无限';
@@ -45,8 +45,8 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
 
         {/* Content */}
         <div className="p-6 overflow-y-auto max-h-[60vh]">
-          {/* 性能跑分 */}
-          {plan.benchmark && (
+          {/* 性能跑分 - Only show for AI companies, not cloud providers */}
+          {plan.benchmark && plan.provider !== '阿里云' && plan.provider !== '火山引擎' && plan.provider !== '腾讯云' && (
             <div className="mb-6">
               <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
                 <Trophy className="w-5 h-5 text-yellow-500 mr-2" />
