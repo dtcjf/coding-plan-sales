@@ -110,6 +110,43 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
             </div>
           </div>
 
+          {/* 详细说明 */}
+          {plan.notes && (
+            <div className="mb-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">详细说明</h3>
+              {plan.notes.modelIntro && (
+                <div className="mb-3">
+                  <p className="text-sm font-medium text-blue-900">模型介绍</p>
+                  <p className="text-sm text-gray-700 mt-1">{plan.notes.modelIntro}</p>
+                </div>
+              )}
+              {plan.notes.performance && (
+                <div className="mb-3">
+                  <p className="text-sm font-medium text-blue-900">性能基准</p>
+                  <p className="text-sm text-gray-700 mt-1">{plan.notes.performance}</p>
+                </div>
+              )}
+              {plan.notes.price && (
+                <div className="mb-3">
+                  <p className="text-sm font-medium text-blue-900">价格优势</p>
+                  <p className="text-sm text-gray-700 mt-1">{plan.notes.price}</p>
+                </div>
+              )}
+              {plan.notes.enterprise && (
+                <div className="mb-3">
+                  <p className="text-sm font-medium text-blue-900">企业级能力</p>
+                  <p className="text-sm text-gray-700 mt-1">{plan.notes.enterprise}</p>
+                </div>
+              )}
+              {plan.notes.subscribe && (
+                <div>
+                  <p className="text-sm font-medium text-blue-900">订阅方式</p>
+                  <p className="text-sm text-gray-700 mt-1">{plan.notes.subscribe}</p>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* 功能列表 */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 mb-3">核心功能</h3>

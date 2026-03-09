@@ -40,7 +40,13 @@ export interface CodingPlan {
   models: string[];
   affiliateLink?: string;
   affiliateCommission?: string;
-  notes?: string;
+  notes?: {
+    modelIntro?: string;
+    performance?: string;
+    price?: string;
+    enterprise?: string;
+    subscribe?: string;
+  };
 }
 
 export interface ComparisonFilter {
