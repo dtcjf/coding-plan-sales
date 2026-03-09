@@ -19,7 +19,7 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white py-20 px-4">
+        <section className="bg-gradient-to-br from-indigo-600 to-purple-700 text-white py-20 px-4">
           <div className="max-w-6xl mx-auto text-center">
             <div className="flex justify-center mb-6">
               <div className="bg-white/20 p-4 rounded-full">
