@@ -218,11 +218,6 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
             <span>立刻购买</span>
             <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
           </a>
-          {plan.affiliateCommission && (
-            <p className="text-xs text-center text-gray-400 mt-2">
-              通过此链接注册，支持我们持续维护本站
-            </p>
-          )}
         </div>
       </div>
     </div>
