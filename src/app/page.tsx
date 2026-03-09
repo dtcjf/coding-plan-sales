@@ -81,21 +81,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Comparison Section */}
-        <section id="comparison" className="py-16 px-4 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                详细功能对比
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                横向对比各平台的核心功能、性能指标和价格
-              </p>
-            </div>
-            <ComparisonTable plans={codingPlans} />
-          </div>
-        </section>
-
         {/* Affiliate Disclosure */}
         <section className="py-12 px-4 bg-gray-100">
           <div className="max-w-4xl mx-auto text-center">
