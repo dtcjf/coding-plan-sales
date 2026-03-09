@@ -3,6 +3,7 @@ import { PlanCard } from '@/components/PlanCard';
 import { ComparisonTable } from '@/components/ComparisonTable';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { Code2 } from 'lucide-react';
 
 // 分离 AI 公司和云厂商
 const aiCompanies = ['MiniMax', 'Moonshot AI', '智谱'];
@@ -20,26 +21,17 @@ export default function Home() {
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white py-20 px-4">
           <div className="max-w-6xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              找到最适合你的 Coding Plan
+            <div className="flex justify-center mb-6">
+              <div className="bg-white/20 p-4 rounded-full">
+                <Code2 className="h-12 w-12 text-white" />
+              </div>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Coding Plan 对比
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              全面对比主流AI编程助手的性能、额度、价格和功能
+              全面对比国产 AI 编程助手的用量限额与价格
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#comparison"
-                className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-blue-50 transition-colors"
-              >
-                查看对比
-              </a>
-              <a
-                href="#plans"
-                className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white/10 transition-colors"
-              >
-                浏览方案
-              </a>
-            </div>
           </div>
         </section>
 
