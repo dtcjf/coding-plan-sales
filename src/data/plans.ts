@@ -188,7 +188,7 @@ export const codingPlans: CodingPlan[] = [
       '专属 API Key (sk-sp-开头)',
       '固定月费，防范欠费风险',
     ],
-    models: ['qwen3.5-plus', 'kimi-k2.5', 'glm-5', 'minimax-m2.5'],
+    models: ['qwen3.5-plus', 'kimi-k2.5', 'glm-5', 'minimax-m2.5', 'qwen3-max-2026-01-23', 'qwen3-coder-next', 'qwen3-coder-plus', 'glm-4.7'],
     affiliateLink: 'https://help.aliyun.com/zh/model-studio/coding-plan',
     affiliateCommission: '推广链接佣金',
     notes: {
@@ -231,7 +231,7 @@ export const codingPlans: CodingPlan[] = [
       '依托字节资源保障，更大容量更快更稳',
       '首月价格低至 2.2 折',
     ],
-    models: ['doubao-seed-code', 'deepseek-v3', 'kimi-k2', 'glm-5', 'minimax-m2.5'],
+    models: ['Doubao-Seed-2.0-Code', 'Doubao-Seed-2.0-pro', 'Doubao-Seed-2.0-lite', 'Doubao-Seed-Code', 'MiniMax-M2.5', 'Kimi-K2.5', 'GLM-4.7', 'DeepSeek-V3.2'],
     affiliateLink: 'https://www.volcengine.com/docs/82379/1925114',
     affiliateCommission: '推广链接佣金',
     notes: {
