@@ -24,7 +24,13 @@ export function Header() {
               href="/"
               className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
-              方案对比
+              方案
+            </a>
+            <a
+              href="#"
+              className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              Q&A
             </a>
             <a
               href="/leaderboard"
@@ -65,7 +71,14 @@ export function Header() {
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              方案对比
+              方案
+            </a>
+            <a
+              href="#"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Q&A
             </a>
             <a
               href="/leaderboard"
