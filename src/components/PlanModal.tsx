@@ -45,6 +45,49 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
 
         {/* Content */}
         <div className="p-6 overflow-y-auto max-h-[60vh]">
+          {/* 性能跑分 */}
+          {plan.benchmark && (
+            <div className="mb-6">
+              <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                <Trophy className="w-5 h-5 text-yellow-500 mr-2" />
+                性能跑分
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {plan.benchmark.lmArenaRank && (
+                  <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-4 border border-orange-200 text-center">
+                    <Trophy className="w-8 h-8 text-orange-500 mx-auto mb-2" />
+                    <p className="text-xs font-medium text-orange-600 uppercase tracking-wide">LM Arena 排名</p>
+                    <p className="text-2xl font-bold text-gray-900 mt-1">{plan.benchmark.lmArenaRank}</p>
+                    {plan.benchmark.lmArenaUrl && (
+                      <a
+                        href={plan.benchmark.lmArenaUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-orange-500 hover:underline mt-1 inline-block"
+                      >
+                        查看详情 →
+                      </a>
+                    )}
+                  </div>
+                )}
+                {plan.benchmark.sweBenchVerified && (
+                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-200 text-center">
+                    <Code2 className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+                    <p className="text-xs font-medium text-blue-600 uppercase tracking-wide">SWE-bench Verified</p>
+                    <p className="text-2xl font-bold text-gray-900 mt-1">{plan.benchmark.sweBenchVerified}</p>
+                  </div>
+                )}
+                {plan.benchmark.sweBenchPro && (
+                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 border border-green-200 text-center">
+                    <Code2 className="w-8 h-8 text-green-500 mx-auto mb-2" />
+                    <p className="text-xs font-medium text-green-600 uppercase tracking-wide">SWE-bench Pro</p>
+                    <p className="text-2xl font-bold text-gray-900 mt-1">{plan.benchmark.sweBenchPro}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* 详细说明 */}
           {plan.notes && (
             <div className="mb-6">
@@ -95,50 +138,7 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
             </div>
           )}
 
-          {/* Benchmark 跑分 */}
-          {plan.benchmark && (
-            <div className="mb-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                <Trophy className="w-5 h-5 text-yellow-500 mr-2" />
-                性能跑分
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                {plan.benchmark.lmArenaRank && (
-                  <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-4 border border-orange-200 text-center">
-                    <Trophy className="w-8 h-8 text-orange-500 mx-auto mb-2" />
-                    <p className="text-xs font-medium text-orange-600 uppercase tracking-wide">LM Arena 排名</p>
-                    <p className="text-2xl font-bold text-gray-900 mt-1">{plan.benchmark.lmArenaRank}</p>
-                    {plan.benchmark.lmArenaUrl && (
-                      <a
-                        href={plan.benchmark.lmArenaUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-orange-500 hover:underline mt-1 inline-block"
-                      >
-                        查看详情 →
-                      </a>
-                    )}
-                  </div>
-                )}
-                {plan.benchmark.sweBenchVerified && (
-                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-200 text-center">
-                    <Code2 className="w-8 h-8 text-blue-500 mx-auto mb-2" />
-                    <p className="text-xs font-medium text-blue-600 uppercase tracking-wide">SWE-bench Verified</p>
-                    <p className="text-2xl font-bold text-gray-900 mt-1">{plan.benchmark.sweBenchVerified}</p>
-                  </div>
-                )}
-                {plan.benchmark.sweBenchPro && (
-                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 border border-green-200 text-center">
-                    <Code2 className="w-8 h-8 text-green-500 mx-auto mb-2" />
-                    <p className="text-xs font-medium text-green-600 uppercase tracking-wide">SWE-bench Pro</p>
-                    <p className="text-2xl font-bold text-gray-900 mt-1">{plan.benchmark.sweBenchPro}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* 详细说明 */}
+          {/* 定价方案 */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 mb-3">定价方案</h3>
             <div className="overflow-x-auto">
