@@ -77,13 +77,6 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
                     <p className="text-2xl font-bold text-gray-900 mt-1">{plan.benchmark.sweBenchVerified}</p>
                   </div>
                 )}
-                {plan.benchmark.sweBenchPro && (
-                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 border border-green-200 text-center">
-                    <Code2 className="w-8 h-8 text-green-500 mx-auto mb-2" />
-                    <p className="text-xs font-medium text-green-600 uppercase tracking-wide">SWE-bench Pro</p>
-                    <p className="text-2xl font-bold text-gray-900 mt-1">{plan.benchmark.sweBenchPro}</p>
-                  </div>
-                )}
               </div>
             </div>
           )}

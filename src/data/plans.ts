@@ -51,7 +51,6 @@ export const codingPlans: CodingPlan[] = [
       lmArenaRank: '第 3 名',
       lmArenaUrl: 'https://lmarena.ai',
       sweBenchVerified: '78.0%',
-      sweBenchPro: '85.0%',
     },
   },
   {

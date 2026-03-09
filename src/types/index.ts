@@ -51,7 +51,6 @@ export interface CodingPlan {
     lmArenaRank?: string;
     lmArenaUrl?: string;
     sweBenchVerified?: string;
-    sweBenchPro?: string;
   };
 }
 
