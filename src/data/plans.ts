@@ -48,9 +48,9 @@ export const codingPlans: CodingPlan[] = [
       subscribe: '支持按月/按季度/按年订阅',
     },
     benchmark: {
-      lmArenaRank: '第 3 名',
+      lmArenaRank: '第 13 名',
       lmArenaUrl: 'https://lmarena.ai',
-      sweBenchVerified: '78.0%',
+      sweBenchVerified: '75.8%',
     },
   },
   {
@@ -100,9 +100,9 @@ export const codingPlans: CodingPlan[] = [
       subscribe: '支持按月/按季度/按年订阅，连续包年最高立省 ¥240',
     },
     benchmark: {
-      lmArenaRank: '第 5 名',
+      lmArenaRank: '第 12 名',
       lmArenaUrl: 'https://lmarena.ai',
-      sweBenchVerified: '72.0%',
+      sweBenchVerified: '70.8%',
     },
   },
   {
@@ -149,7 +149,7 @@ export const codingPlans: CodingPlan[] = [
       subscribe: '支持按月/按季度/按年订阅，按年订阅享 7 折优惠',
     },
     benchmark: {
-      lmArenaRank: '第 4 名',
+      lmArenaRank: '第 8 名',
       lmArenaUrl: 'https://lmarena.ai',
       sweBenchVerified: '72.8%',
     },
