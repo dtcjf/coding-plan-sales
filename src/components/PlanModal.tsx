@@ -156,9 +156,15 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
                 <thead>
                   <tr className="border-b border-gray-200">
                     <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">档位</th>
-                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">用量/5h</th>
-                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">每周</th>
-                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">每月</th>
+                    {plan.provider === '阿里云' || plan.provider === '火山引擎' || plan.provider === '腾讯云' ? (
+                      <>
+                        <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">用量/5h</th>
+                        <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">每周</th>
+                        <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">每月</th>
+                      </>
+                    ) : (
+                      <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">用量/5h</th>
+                    )}
                     <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">月付</th>
                     <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">年付</th>
                   </tr>
@@ -170,15 +176,23 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
                         {tier.name}
                         {tier.description && <div className="text-gray-500 text-xs mt-1">({tier.description})</div>}
                       </td>
-                      <td className="py-3 text-center text-gray-600">
-                        {tier.promptsPer5Hours === -1 ? '无限' : tier.promptsPer5Hours || '-'}
-                      </td>
-                      <td className="py-3 text-center text-gray-600">
-                        {tier.requestsPerWeek ? formatNumber(tier.requestsPerWeek) : '-'}
-                      </td>
-                      <td className="py-3 text-center text-gray-600">
-                        {tier.requestsPerMonth === -1 ? '无限' : tier.requestsPerMonth ? formatNumber(tier.requestsPerMonth) : '-'}
-                      </td>
+                      {plan.provider === '阿里云' || plan.provider === '火山引擎' || plan.provider === '腾讯云' ? (
+                        <>
+                          <td className="py-3 text-center text-gray-600">
+                            {tier.promptsPer5Hours === -1 ? '无限' : tier.promptsPer5Hours || '-'}
+                          </td>
+                          <td className="py-3 text-center text-gray-600">
+                            {tier.requestsPerWeek ? formatNumber(tier.requestsPerWeek) : '-'}
+                          </td>
+                          <td className="py-3 text-center text-gray-600">
+                            {tier.requestsPerMonth === -1 ? '无限' : tier.requestsPerMonth ? formatNumber(tier.requestsPerMonth) : '-'}
+                          </td>
+                        </>
+                      ) : (
+                        <td className="py-3 text-center text-gray-600">
+                          {tier.promptsPer5Hours === -1 ? '无限' : tier.promptsPer5Hours || '-'}
+                        </td>
+                      )}
                       <td className="py-3 text-center font-semibold text-gray-900">¥{tier.monthly}</td>
                       <td className="py-3 text-center font-semibold text-gray-900">¥{tier.yearly}</td>
                     </tr>
