@@ -87,6 +87,13 @@ export const codingPlans: CodingPlan[] = [
     models: ['kimi-k2.5'],
     affiliateLink: 'https://www.moonshot.cn',
     affiliateCommission: '推广链接佣金',
+    notes: {
+      modelIntro: 'Kimi K2.5 是 Kimi 迄今最智能的模型，在 Agent、代码、视觉理解及一系列通用智能任务上取得开源 SoTA 表现。原生的多模态架构设计，同时支持视觉与文本输入、思考与非思考模式、对话与 Agent 任务。',
+      performance: 'Kimi K2.5 在 Agent、代码和视觉理解方面表现出色，是 Kimi 迄今最全能的模型。支持 Kimi 官方 API 和开放平台调用。',
+      price: 'Kimi 开放平台 API 价格：输入缓存命中 ¥1/百万 tokens，未命中 ¥5/百万 tokens，输出 ¥15/百万 tokens',
+      enterprise: '企业版可联系销售获取定制化服务，支持大规模团队协作',
+      subscribe: '支持按月/按季度/按年订阅，连续包年最高立省 ¥240',
+    },
   },
   {
     id: 'glm',
@@ -124,6 +131,13 @@ export const codingPlans: CodingPlan[] = [
     models: ['glm-5'],
     affiliateLink: 'https://www.zhipuai.cn',
     affiliateCommission: '推广链接佣金',
+    notes: {
+      modelIntro: 'GLM-5 是智谱新一代旗舰大模型，参数规模达 744B，激活参数 40B。在推理、代码和智能体能力等方面达到开源模型 SOTA 水平，全球排名第四、开源第一。',
+      performance: 'GLM-5 在 SWE-bench Verified 测试中表现优异，代码能力超越同类产品。2026年2月价格整体涨幅30%起，已订阅用户价格保持不变。',
+      price: 'API 定价：输入 ¥0.5/百万 tokens，输出 ¥2/百万 tokens（具体以官网为准）',
+      enterprise: '为企业客户提供定制化服务，支持私有化部署和企业级支持',
+      subscribe: '支持按月/按季度/按年订阅，按年订阅享 7 折优惠',
+    },
   },
   // 云厂商 Coding Plan
   {
