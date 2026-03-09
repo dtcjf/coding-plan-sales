@@ -5,6 +5,7 @@ export interface PricingTier {
   description?: string;
   models?: string[];
   requestsPerMonth?: number;
+  promptsPer5Hours?: number | string;
   tokensPerMonth?: number;
   maxContextLength?: number;
   contextWindow?: string;
@@ -27,6 +28,7 @@ export interface CodingPlan {
     requestsPerMonth: number;
     tokensPerMonth: number;
     maxContextLength: number;
+    promptsPer5Hours?: string;
   };
   modelSpecs?: {
     params: string;

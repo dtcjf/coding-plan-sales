@@ -12,17 +12,18 @@ export const codingPlans: CodingPlan[] = [
       tier: 'Starter',
     },
     pricingTiers: [
-      { name: 'Starter', monthly: 29, yearly: 290, description: '入门版', models: ['M2.5'], requestsPerMonth: -1, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Plus', monthly: 49, yearly: 490, description: '标准版', models: ['M2.5'], requestsPerMonth: -1, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Max', monthly: 119, yearly: 1190, description: '高级版', models: ['M2.5'], requestsPerMonth: -1, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Plus', monthly: 98, yearly: 980, description: '极速版', models: ['M2.5 (极速)'], requestsPerMonth: -1, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
-      { name: 'Max', monthly: 199, yearly: 1990, description: '极速版', models: ['M2.5 (极速)'], requestsPerMonth: -1, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
-      { name: 'Ultra', monthly: 899, yearly: 8990, description: '极速版', models: ['M2.5 (极速)'], requestsPerMonth: -1, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
+      { name: 'Starter', monthly: 29, yearly: 290, description: '入门版', models: ['M2.5'], requestsPerMonth: -1, promptsPer5Hours: 40, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Plus', monthly: 49, yearly: 490, description: '标准版', models: ['M2.5'], requestsPerMonth: -1, promptsPer5Hours: 100, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Max', monthly: 119, yearly: 1190, description: '高级版', models: ['M2.5'], requestsPerMonth: -1, promptsPer5Hours: 300, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Plus 极速版', monthly: 98, yearly: 980, description: '极速版 100+TPS', models: ['M2.5-highspeed'], requestsPerMonth: -1, promptsPer5Hours: 100, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
+      { name: 'Max 极速版', monthly: 199, yearly: 1990, description: '极速版 100+TPS', models: ['M2.5-highspeed'], requestsPerMonth: -1, promptsPer5Hours: 300, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
+      { name: 'Ultra 极速版', monthly: 899, yearly: 8990, description: '极速版 100+TPS', models: ['M2.5-highspeed'], requestsPerMonth: -1, promptsPer5Hours: 2000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: -1,
       tokensPerMonth: -1,
       maxContextLength: 128000,
+      promptsPer5Hours: '滚动5小时窗口',
     },
     modelSpecs: {
       params: '总230B/激活10B',
@@ -59,20 +60,19 @@ export const codingPlans: CodingPlan[] = [
     provider: 'Moonshot AI',
     pricing: {
       monthly: 49,
-      yearly: 469,
+      yearly: 468,
       currency: 'CNY',
       tier: 'Andante',
     },
     pricingTiers: [
-      { name: 'Andante', monthly: 49, yearly: 469, description: '行板-入门版', models: ['K2.5'], requestsPerMonth: -1, maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
-      { name: 'Moderato', monthly: 99, yearly: 948, description: '中板', models: ['K2.5'], requestsPerMonth: -1, maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
-      { name: 'Allegretto', monthly: 199, yearly: 1908, description: '稍快板', models: ['K2.5'], requestsPerMonth: -1, maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
-      { name: 'Allegro', monthly: 699, yearly: 6708, description: '快板', models: ['K2.5'], requestsPerMonth: -1, maxContextLength: 256000, contextWindow: '256K tokens', speed: '极速' },
+      { name: 'Andante', monthly: 49, yearly: 468, description: '基础版', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '300-1200', maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
+      { name: 'Moderato', monthly: 99, yearly: 948, description: '推荐版', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '更大额度', maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
     ],
     limits: {
       requestsPerMonth: -1,
       tokensPerMonth: -1,
       maxContextLength: 256000,
+      promptsPer5Hours: '7天周期刷新',
     },
     modelSpecs: {
       params: '总1T/激活32B',
@@ -116,14 +116,15 @@ export const codingPlans: CodingPlan[] = [
       tier: 'Lite',
     },
     pricingTiers: [
-      { name: 'Lite', monthly: 49, yearly: 411, description: '轻量版', models: ['GLM-5'], requestsPerMonth: -1, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
-      { name: 'Pro', monthly: 149, yearly: 1251, description: '专业版', models: ['GLM-5'], requestsPerMonth: -1, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
-      { name: 'Max', monthly: 469, yearly: 3939, description: '旗舰版', models: ['GLM-5'], requestsPerMonth: -1, maxContextLength: 200000, contextWindow: '200K tokens', speed: '极速' },
+      { name: 'Lite', monthly: 49, yearly: 411, description: '轻量版 ~80次/5h', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 400, promptsPer5Hours: 80, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
+      { name: 'Pro', monthly: 149, yearly: 1251, description: '专业版 ~400次/5h', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 2000, promptsPer5Hours: 400, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
+      { name: 'Max', monthly: 469, yearly: 3939, description: '旗舰版 ~1600次/5h', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 8000, promptsPer5Hours: 1600, maxContextLength: 200000, contextWindow: '200K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: -1,
       tokensPerMonth: -1,
       maxContextLength: 200000,
+      promptsPer5Hours: '滚动5小时窗口+周限额',
     },
     modelSpecs: {
       params: '总744B/激活40B',
@@ -166,13 +167,14 @@ export const codingPlans: CodingPlan[] = [
       tier: 'Lite',
     },
     pricingTiers: [
-      { name: 'Lite', monthly: 7.9, yearly: 480, description: '首月特惠¥7.9', models: ['Qwen3.5-Plus', 'Kimi-K2.5', 'GLM-5', 'MiniMax-M2.5'], requestsPerMonth: 18000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Pro', monthly: 39.9, yearly: 2400, description: '首月特惠¥39.9', models: ['Qwen3.5-Plus', 'Kimi-K2.5', 'GLM-5', 'MiniMax-M2.5'], requestsPerMonth: 90000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
+      { name: 'Lite', monthly: 7.9, yearly: 480, description: '首月¥7.9，续费¥20/月', models: ['Qwen3.5-Plus', 'Qwen3-Max-2026-01-23', 'Qwen3-Coder-Next', 'Qwen3-Coder-Plus', 'GLM-4.7', 'Kimi-K2.5', 'MiniMax-M2.5'], requestsPerMonth: 18000, promptsPer5Hours: 1200, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Pro', monthly: 39.9, yearly: 2400, description: '首月¥39.9，续费¥100/月', models: ['Qwen3.5-Plus', 'Qwen3-Max-2026-01-23', 'Qwen3-Coder-Next', 'Qwen3-Coder-Plus', 'GLM-4.7', 'Kimi-K2.5', 'MiniMax-M2.5'], requestsPerMonth: 90000, promptsPer5Hours: 6000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: 18000,
       tokensPerMonth: -1,
       maxContextLength: 128000,
+      promptsPer5Hours: '滚动5h+周限额',
     },
     modelSpecs: {
       params: '多模型集成',
@@ -194,7 +196,7 @@ export const codingPlans: CodingPlan[] = [
     notes: {
       modelIntro: '阿里云 Coding Plan 整合千问、GLM、Kimi、MiniMax 四大国产顶尖模型，一次订阅即可在多模型间按需切换。',
       performance: '兼容主流 AI 编程工具，包括 Claude Code、OpenClaw、TRAE、Cline、Cursor、Roo Code 等。折算成本远低于常规 API 调用。',
-      price: 'Lite ¥40/月（首月¥7.9），Pro ¥200/月（首月¥39.9），按年付享更多优惠',
+      price: 'Lite 首月¥7.9（续费¥20/月），Pro 首月¥39.9（续费¥100/月），5小时滚动窗口，每周一面度重置',
       enterprise: '专属 API Key 和 Base URL，支持企业级调用，需遵守仅限编程工具使用的规定',
       subscribe: '不支持退款，仅限编程工具使用，禁止用于 API 调用、自动化脚本或批量调用场景',
     },
@@ -210,13 +212,14 @@ export const codingPlans: CodingPlan[] = [
       tier: 'Lite',
     },
     pricingTiers: [
-      { name: 'Lite', monthly: 9.9, yearly: 480, description: '首月特惠¥9.9', models: ['豆包·DeepSeek', 'Kimi-K2', 'GLM-5', 'MiniMax-M2.5'], requestsPerMonth: -1, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Pro', monthly: 44.91, yearly: 2400, description: '首月特惠¥44.91', models: ['豆包·DeepSeek', 'Kimi-K2', 'GLM-5', 'MiniMax-M2.5'], requestsPerMonth: -1, maxContextLength: 200000, contextWindow: '200K tokens', speed: '极速' },
+      { name: 'Lite', monthly: 8.91, yearly: 480, description: '首月¥8.91，续费¥40/月', models: ['Doubao-Seed-2.0-Code', 'Doubao-Seed-Code', 'Kimi-K2.5', 'Kimi-K2', 'GLM-4.7', 'DeepSeek-V3.2', 'MiniMax-M2.5'], requestsPerMonth: -1, promptsPer5Hours: '数倍Claude Pro', maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Pro', monthly: 44.91, yearly: 2400, description: '首月¥44.91，续费¥200/月', models: ['Doubao-Seed-2.0-Code', 'Doubao-Seed-Code', 'Kimi-K2.5', 'Kimi-K2', 'GLM-4.7', 'DeepSeek-V3.2', 'MiniMax-M2.5'], requestsPerMonth: -1, promptsPer5Hours: '5倍Lite', maxContextLength: 200000, contextWindow: '200K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: -1,
       tokensPerMonth: -1,
       maxContextLength: 128000,
+      promptsPer5Hours: '无明确限制',
     },
     modelSpecs: {
       params: '多模型集成',
@@ -237,7 +240,7 @@ export const codingPlans: CodingPlan[] = [
     notes: {
       modelIntro: '火山方舟 Coding Plan 整合豆包、DeepSeek、Kimi、GLM 等多款国产顶尖模型，一次订阅即可在多模型间按需切换。',
       performance: '兼容 Claude Code、OpenCode、OpenClaw、TRAE、Cline、Cursor 等主流编程工具。依托字节资源保障，更大容量、更快更稳。',
-      price: 'Lite ¥40/月（首月¥9.9），Pro ¥200/月（首月¥44.91）',
+      price: 'Lite 首月¥8.91（续费¥40/月），Pro 首月¥44.91（续费¥200/月），2月下单次月再享5折',
       enterprise: '专属 API Key，支持企业级调用，需遵守仅限编程工具使用的规定',
       subscribe: '不支持退款，仅限编程工具使用，禁止用于 API 调用、自动化脚本或批量调用场景',
     },
@@ -253,13 +256,14 @@ export const codingPlans: CodingPlan[] = [
       tier: 'Lite',
     },
     pricingTiers: [
-      { name: 'Lite', monthly: 7.9, yearly: 480, description: '首月特惠¥7.9', models: ['混元2.0', 'Hunyuan-T1', 'MiniMax-M2.5', 'Kimi-K2.5', 'GLM-5'], requestsPerMonth: 18000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Pro', monthly: 39.9, yearly: 2400, description: '首月特惠¥39.9', models: ['混元2.0', 'Hunyuan-T1', 'MiniMax-M2.5', 'Kimi-K2.5', 'GLM-5'], requestsPerMonth: 90000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
+      { name: 'Lite', monthly: 7.9, yearly: 480, description: '首月¥7.9，续费¥20/月', models: ['Tencent HY 2.0 Instruct', 'Tencent HY 2.0 Think', 'Hunyuan-T1', 'Hunyuan-TurboS', 'MiniMax-M2.5', 'Kimi-K2.5', 'GLM-5'], requestsPerMonth: 18000, promptsPer5Hours: 1200, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Pro', monthly: 39.9, yearly: 2400, description: '首月¥39.9，续费¥100/月', models: ['Tencent HY 2.0 Instruct', 'Tencent HY 2.0 Think', 'Hunyuan-T1', 'Hunyuan-TurboS', 'MiniMax-M2.5', 'Kimi-K2.5', 'GLM-5'], requestsPerMonth: 90000, promptsPer5Hours: 6000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: 18000,
       tokensPerMonth: -1,
       maxContextLength: 128000,
+      promptsPer5Hours: '滚动5h+周+月三重限额',
     },
     modelSpecs: {
       params: '多模型集成',
@@ -280,7 +284,7 @@ export const codingPlans: CodingPlan[] = [
     notes: {
       modelIntro: '腾讯云 Coding Plan 整合混元、MiniMax、Kimi、GLM 四大国产顶尖模型，支持 Auto 模式自动选择最优模型。',
       performance: '兼容 OpenClaw、CodeBuddy Code、Claude Code、OpenCode、Cline、Cursor 等主流编程工具。200ms 级低延迟，微信生态深度集成。',
-      price: 'Lite ¥40/月（首月¥7.9），Pro ¥200/月（首月¥39.9），次月续费享 5 折优惠',
+      price: 'Lite 首月¥7.9（次月¥20，第3月起¥40/月），Pro 首月¥39.9（次月¥100，第3月起¥200/月），5h+周+月三重限额',
       enterprise: '专属 API Key 和 Base URL，支持 OpenAI/Anthropic 兼容格式，需遵守仅限编程工具使用的规定',
       subscribe: '不支持退款，仅限编程工具使用，禁止 API 调用形式用于自动化脚本或批量调用场景',
     },
