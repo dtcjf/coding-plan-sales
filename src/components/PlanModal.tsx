@@ -155,20 +155,20 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-gray-200">
-                    <th className="text-left py-2 text-xs font-semibold text-gray-500 uppercase">档位</th>
+                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">档位</th>
                     <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">用量/5h</th>
                     <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">每周</th>
                     <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">每月</th>
-                    <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">月付</th>
-                    <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">年付</th>
+                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">月付</th>
+                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">年付</th>
                   </tr>
                 </thead>
                 <tbody>
                   {plan.pricingTiers?.map((tier, index) => (
                     <tr key={index} className="border-b border-gray-100 last:border-0">
-                      <td className="py-3 text-gray-900 font-medium">
+                      <td className="py-3 text-center text-gray-900 font-medium">
                         {tier.name}
-                        {tier.description && <span className="text-gray-500 text-xs ml-1">({tier.description})</span>}
+                        {tier.description && <div className="text-gray-500 text-xs mt-1">({tier.description})</div>}
                       </td>
                       <td className="py-3 text-center text-gray-600">
                         {tier.promptsPer5Hours === -1 ? '无限' : tier.promptsPer5Hours || '-'}
@@ -179,8 +179,8 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
                       <td className="py-3 text-center text-gray-600">
                         {tier.requestsPerMonth === -1 ? '无限' : tier.requestsPerMonth ? formatNumber(tier.requestsPerMonth) : '-'}
                       </td>
-                      <td className="py-3 text-right font-semibold text-gray-900">¥{tier.monthly}</td>
-                      <td className="py-3 text-right font-semibold text-gray-900">¥{tier.yearly}</td>
+                      <td className="py-3 text-center font-semibold text-gray-900">¥{tier.monthly}</td>
+                      <td className="py-3 text-center font-semibold text-gray-900">¥{tier.yearly}</td>
                     </tr>
                   ))}
                 </tbody>
