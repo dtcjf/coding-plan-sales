@@ -5,6 +5,7 @@ export interface PricingTier {
   description?: string;
   models?: string[];
   requestsPerMonth?: number;
+  requestsPerWeek?: number;
   promptsPer5Hours?: number | string;
   tokensPerMonth?: number;
   maxContextLength?: number;

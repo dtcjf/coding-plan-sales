@@ -81,6 +81,23 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
             </div>
           )}
 
+          {/* 用量限制 */}
+          {plan.limits && (
+            <div className="mb-6">
+              <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                <Zap className="w-5 h-5 text-orange-600 mr-2" />
+                用量限制
+              </h3>
+              <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-4 border border-orange-200">
+                <p className="text-sm text-gray-800">
+                  {plan.limits.promptsPer5Hours && (
+                    <span className="font-medium">刷新机制：{plan.limits.promptsPer5Hours}</span>
+                  )}
+                </p>
+              </div>
+            </div>
+          )}
+
           {/* 详细说明 */}
           {plan.notes && (
             <div className="mb-6">
@@ -141,6 +158,8 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
                     <th className="text-left py-2 text-xs font-semibold text-gray-500 uppercase">档位</th>
                     <th className="text-left py-2 text-xs font-semibold text-gray-500 uppercase">可用模型</th>
                     <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">用量/5h</th>
+                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">每周</th>
+                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">每月</th>
                     <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">月付</th>
                     <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">年付</th>
                   </tr>
@@ -150,13 +169,19 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
                     <tr key={index} className="border-b border-gray-100 last:border-0">
                       <td className="py-3 text-gray-900 font-medium">
                         {tier.name}
-                        {tier.description && <span className="text-gray-900 text-xs ml-1">({tier.description})</span>}
+                        {tier.description && <span className="text-gray-500 text-xs ml-1">({tier.description})</span>}
                       </td>
-                      <td className="py-3 text-gray-600">
+                      <td className="py-3 text-gray-600 max-w-[120px] truncate" title={tier.models?.join(', ')}>
                         {tier.models?.join(', ')}
                       </td>
                       <td className="py-3 text-center text-gray-600">
                         {tier.promptsPer5Hours === -1 ? '无限' : tier.promptsPer5Hours || '-'}
+                      </td>
+                      <td className="py-3 text-center text-gray-600">
+                        {tier.requestsPerWeek ? formatNumber(tier.requestsPerWeek) : '-'}
+                      </td>
+                      <td className="py-3 text-center text-gray-600">
+                        {tier.requestsPerMonth === -1 ? '无限' : tier.requestsPerMonth ? formatNumber(tier.requestsPerMonth) : '-'}
                       </td>
                       <td className="py-3 text-right font-semibold text-gray-900">¥{tier.monthly}</td>
                       <td className="py-3 text-right font-semibold text-gray-900">¥{tier.yearly}</td>

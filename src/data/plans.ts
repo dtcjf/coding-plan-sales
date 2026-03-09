@@ -116,9 +116,9 @@ export const codingPlans: CodingPlan[] = [
       tier: 'Lite',
     },
     pricingTiers: [
-      { name: 'Lite', monthly: 49, yearly: 411, description: '轻量版 ~80次/5h', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 400, promptsPer5Hours: 80, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
-      { name: 'Pro', monthly: 149, yearly: 1251, description: '专业版 ~400次/5h', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 2000, promptsPer5Hours: 400, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
-      { name: 'Max', monthly: 469, yearly: 3939, description: '旗舰版 ~1600次/5h', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 8000, promptsPer5Hours: 1600, maxContextLength: 200000, contextWindow: '200K tokens', speed: '极速' },
+      { name: 'Lite', monthly: 49, yearly: 411, description: '轻量版', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 400, requestsPerWeek: 400, promptsPer5Hours: 80, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
+      { name: 'Pro', monthly: 149, yearly: 1251, description: '专业版', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 2000, requestsPerWeek: 2000, promptsPer5Hours: 400, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
+      { name: 'Max', monthly: 469, yearly: 3939, description: '旗舰版', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 8000, requestsPerWeek: 8000, promptsPer5Hours: 1600, maxContextLength: 200000, contextWindow: '200K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: -1,
@@ -167,8 +167,8 @@ export const codingPlans: CodingPlan[] = [
       tier: 'Lite',
     },
     pricingTiers: [
-      { name: 'Lite', monthly: 7.9, yearly: 480, description: '首月¥7.9，续费¥20/月', models: ['Qwen3.5-Plus', 'Qwen3-Max-2026-01-23', 'Qwen3-Coder-Next', 'Qwen3-Coder-Plus', 'GLM-4.7', 'Kimi-K2.5', 'MiniMax-M2.5'], requestsPerMonth: 18000, promptsPer5Hours: 1200, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Pro', monthly: 39.9, yearly: 2400, description: '首月¥39.9，续费¥100/月', models: ['Qwen3.5-Plus', 'Qwen3-Max-2026-01-23', 'Qwen3-Coder-Next', 'Qwen3-Coder-Plus', 'GLM-4.7', 'Kimi-K2.5', 'MiniMax-M2.5'], requestsPerMonth: 90000, promptsPer5Hours: 6000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
+      { name: 'Lite', monthly: 7.9, yearly: 480, description: '首月¥7.9，续费¥20/月', models: ['Qwen3.5-Plus', 'Qwen3-Max-2026-01-23', 'Qwen3-Coder-Next', 'Qwen3-Coder-Plus', 'GLM-4.7', 'Kimi-K2.5', 'MiniMax-M2.5'], requestsPerMonth: 18000, requestsPerWeek: 9000, promptsPer5Hours: 1200, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Pro', monthly: 39.9, yearly: 2400, description: '首月¥39.9，续费¥100/月', models: ['Qwen3.5-Plus', 'Qwen3-Max-2026-01-23', 'Qwen3-Coder-Next', 'Qwen3-Coder-Plus', 'GLM-4.7', 'Kimi-K2.5', 'MiniMax-M2.5'], requestsPerMonth: 90000, requestsPerWeek: 45000, promptsPer5Hours: 6000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: 18000,
@@ -256,8 +256,8 @@ export const codingPlans: CodingPlan[] = [
       tier: 'Lite',
     },
     pricingTiers: [
-      { name: 'Lite', monthly: 7.9, yearly: 480, description: '首月¥7.9，续费¥20/月', models: ['Tencent HY 2.0 Instruct', 'Tencent HY 2.0 Think', 'Hunyuan-T1', 'Hunyuan-TurboS', 'MiniMax-M2.5', 'Kimi-K2.5', 'GLM-5'], requestsPerMonth: 18000, promptsPer5Hours: 1200, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Pro', monthly: 39.9, yearly: 2400, description: '首月¥39.9，续费¥100/月', models: ['Tencent HY 2.0 Instruct', 'Tencent HY 2.0 Think', 'Hunyuan-T1', 'Hunyuan-TurboS', 'MiniMax-M2.5', 'Kimi-K2.5', 'GLM-5'], requestsPerMonth: 90000, promptsPer5Hours: 6000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
+      { name: 'Lite', monthly: 7.9, yearly: 480, description: '首月¥7.9，续费¥20/月', models: ['Tencent HY 2.0 Instruct', 'Tencent HY 2.0 Think', 'Hunyuan-T1', 'Hunyuan-TurboS', 'MiniMax-M2.5', 'Kimi-K2.5', 'GLM-5'], requestsPerMonth: 18000, requestsPerWeek: 9000, promptsPer5Hours: 1200, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Pro', monthly: 39.9, yearly: 2400, description: '首月¥39.9，续费¥100/月', models: ['Tencent HY 2.0 Instruct', 'Tencent HY 2.0 Think', 'Hunyuan-T1', 'Hunyuan-TurboS', 'MiniMax-M2.5', 'Kimi-K2.5', 'GLM-5'], requestsPerMonth: 90000, requestsPerWeek: 45000, promptsPer5Hours: 6000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: 18000,
