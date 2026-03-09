@@ -189,6 +189,7 @@ export function PlanCard({ plan }: PlanCardProps) {
 
       {/* Modal */}
       <PlanModal
+        key={plan.id}
         plan={plan}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
