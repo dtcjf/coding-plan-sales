@@ -1,7 +1,7 @@
 'use client';
 
 import { CodingPlan } from '@/types';
-import { X, ExternalLink, Check } from 'lucide-react';
+import { X, ExternalLink, Check, Sparkles, Zap, DollarSign, Building2, Calendar } from 'lucide-react';
 
 interface PlanModalProps {
   plan: CodingPlan;
@@ -47,47 +47,63 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
         <div className="p-6 overflow-y-auto max-h-[60vh]">
           {/* 详细说明 */}
           {plan.notes && (
-            <div className="mb-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">详细说明</h3>
-              {plan.notes.modelIntro && (
-                <div className="mb-3">
-                  <p className="text-sm font-medium text-blue-900">模型介绍</p>
-                  <p className="text-sm text-gray-700 mt-1">{plan.notes.modelIntro}</p>
-                </div>
-              )}
-              {plan.notes.performance && (
-                <div className="mb-3">
-                  <p className="text-sm font-medium text-blue-900">性能基准</p>
-                  <p className="text-sm text-gray-700 mt-1">{plan.notes.performance}</p>
-                </div>
-              )}
-              {plan.notes.price && (
-                <div className="mb-3">
-                  <p className="text-sm font-medium text-blue-900">价格优势</p>
-                  <p className="text-sm text-gray-700 mt-1">{plan.notes.price}</p>
-                </div>
-              )}
-              {plan.notes.enterprise && (
-                <div className="mb-3">
-                  <p className="text-sm font-medium text-blue-900">企业级能力</p>
-                  <p className="text-sm text-gray-700 mt-1">{plan.notes.enterprise}</p>
-                </div>
-              )}
-              {plan.notes.subscribe && (
-                <div>
-                  <p className="text-sm font-medium text-blue-900">订阅方式</p>
-                  <p className="text-sm text-gray-700 mt-1">{plan.notes.subscribe}</p>
-                </div>
-              )}
+            <div className="mb-6">
+              <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                <Sparkles className="w-5 h-5 text-blue-600 mr-2" />
+                详细说明
+              </h3>
+              <div className="grid gap-3">
+                {plan.notes.modelIntro && (
+                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 border-l-4 border-blue-500">
+                    <p className="text-xs font-bold text-blue-600 uppercase tracking-wide mb-1">模型介绍</p>
+                    <p className="text-sm text-gray-800 leading-relaxed">{plan.notes.modelIntro}</p>
+                  </div>
+                )}
+                {plan.notes.performance && (
+                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 border-l-4 border-green-500">
+                    <p className="text-xs font-bold text-green-600 uppercase tracking-wide mb-1 flex items-center">
+                      <Zap className="w-3 h-3 mr-1" /> 性能优势
+                    </p>
+                    <p className="text-sm text-gray-800 leading-relaxed">{plan.notes.performance}</p>
+                  </div>
+                )}
+                {plan.notes.price && (
+                  <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg p-4 border-l-4 border-amber-500">
+                    <p className="text-xs font-bold text-amber-600 uppercase tracking-wide mb-1 flex items-center">
+                      <DollarSign className="w-3 h-3 mr-1" /> 价格优势
+                    </p>
+                    <p className="text-sm text-gray-800 leading-relaxed">{plan.notes.price}</p>
+                  </div>
+                )}
+                {plan.notes.enterprise && (
+                  <div className="bg-gradient-to-r from-purple-50 to-violet-50 rounded-lg p-4 border-l-4 border-purple-500">
+                    <p className="text-xs font-bold text-purple-600 uppercase tracking-wide mb-1 flex items-center">
+                      <Building2 className="w-3 h-3 mr-1" /> 企业级能力
+                    </p>
+                    <p className="text-sm text-gray-800 leading-relaxed">{plan.notes.enterprise}</p>
+                  </div>
+                )}
+                {plan.notes.subscribe && (
+                  <div className="bg-gradient-to-r from-cyan-50 to-sky-50 rounded-lg p-4 border-l-4 border-cyan-500">
+                    <p className="text-xs font-bold text-cyan-600 uppercase tracking-wide mb-1 flex items-center">
+                      <Calendar className="w-3 h-3 mr-1" /> 订阅方式
+                    </p>
+                    <p className="text-sm text-gray-800 leading-relaxed">{plan.notes.subscribe}</p>
+                  </div>
+                )}
+              </div>
             </div>
           )}
 
           {/* 功能列表 */}
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">核心功能</h3>
+            <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+              <Check className="w-5 h-5 text-green-600 mr-2" />
+              核心功能
+            </h3>
             <ul className="grid grid-cols-2 gap-2">
               {plan.features.map((feature, index) => (
-                <li key={index} className="flex items-center text-sm text-gray-600">
+                <li key={index} className="flex items-center text-sm text-gray-700 bg-gray-50 rounded-md px-3 py-2">
                   <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                   {feature}
                 </li>
