@@ -4,6 +4,13 @@ import { ComparisonTable } from '@/components/ComparisonTable';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
+// 分离 AI 公司和云厂商
+const aiCompanies = ['MiniMax', 'Moonshot AI', '智谱'];
+const cloudProviders = ['阿里云', '火山引擎', '腾讯云'];
+
+const aiCompanyPlans = codingPlans.filter((plan) => aiCompanies.includes(plan.provider));
+const cloudProviderPlans = codingPlans.filter((plan) => cloudProviders.includes(plan.provider));
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -36,7 +43,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Plans Section */}
+        {/* AI 公司 Plans Section */}
         <section id="plans" className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
@@ -48,7 +55,26 @@ export default function Home() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {codingPlans.map((plan) => (
+              {aiCompanyPlans.map((plan) => (
+                <PlanCard key={plan.id} plan={plan} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 云厂商 Plans Section */}
+        <section id="cloud-plans" className="py-16 px-4 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                云厂商 Coding Plan
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                主流云服务商的 AI 编程助手解决方案
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {cloudProviderPlans.map((plan) => (
                 <PlanCard key={plan.id} plan={plan} />
               ))}
             </div>
