@@ -65,16 +65,16 @@ export const codingPlans: CodingPlan[] = [
       tier: 'Andante',
     },
     pricingTiers: [
-      { name: 'Andante', monthly: 49, yearly: 468, description: '入门版', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '300-1200', maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
-      { name: 'Moderato', monthly: 99, yearly: 948, description: '进阶版', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '更大额度', maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
-      { name: 'Allegretto', monthly: 199, yearly: 1908, description: '高级版', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '更大额度', maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
-      { name: 'Allegro', monthly: 699, yearly: 6708, description: '旗舰版', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '更大额度', maxContextLength: 256000, contextWindow: '256K tokens', speed: '极速' },
+      { name: 'Andante（行板）', monthly: 49, yearly: 468, description: '', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '约1M tokens', maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
+      { name: 'Moderato（小行板）', monthly: 99, yearly: 948, description: '', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '约4M tokens', maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
+      { name: 'Allegretto（快板）', monthly: 199, yearly: 1908, description: '', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '约20M tokens', maxContextLength: 256000, contextWindow: '256K tokens', speed: '标准' },
+      { name: 'Allegro（急板）', monthly: 699, yearly: 6708, description: '', models: ['K2.5'], requestsPerMonth: -1, promptsPer5Hours: '约60M tokens', maxContextLength: 256000, contextWindow: '256K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: -1,
       tokensPerMonth: -1,
       maxContextLength: 256000,
-      promptsPer5Hours: '7天周期刷新',
+      promptsPer5Hours: '7天周期刷新，按tokens计',
     },
     modelSpecs: {
       params: '总1T/激活32B',
@@ -214,14 +214,14 @@ export const codingPlans: CodingPlan[] = [
       tier: 'Lite',
     },
     pricingTiers: [
-      { name: 'Lite', monthly: 8.91, yearly: 480, description: '入门版', models: ['Doubao-Seed-2.0-Code', 'Doubao-Seed-Code', 'Kimi-K2.5', 'Kimi-K2', 'GLM-4.7', 'DeepSeek-V3.2', 'MiniMax-M2.5'], requestsPerMonth: -1, promptsPer5Hours: '数倍Claude Pro', maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Pro', monthly: 44.91, yearly: 2400, description: '进阶版', models: ['Doubao-Seed-2.0-Code', 'Doubao-Seed-Code', 'Kimi-K2.5', 'Kimi-K2', 'GLM-4.7', 'DeepSeek-V3.2', 'MiniMax-M2.5'], requestsPerMonth: -1, promptsPer5Hours: '5倍Lite', maxContextLength: 200000, contextWindow: '200K tokens', speed: '极速' },
+      { name: 'Lite', monthly: 8.91, yearly: 480, description: '入门版', models: ['Doubao-Seed-2.0-Code', 'Doubao-Seed-Code', 'Kimi-K2.5', 'Kimi-K2', 'GLM-4.7', 'DeepSeek-V3.2', 'MiniMax-M2.5'], requestsPerMonth: 18000, requestsPerWeek: 9000, promptsPer5Hours: 1200, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Pro', monthly: 44.91, yearly: 2400, description: '进阶版', models: ['Doubao-Seed-2.0-Code', 'Doubao-Seed-Code', 'Kimi-K2.5', 'Kimi-K2', 'GLM-4.7', 'DeepSeek-V3.2', 'MiniMax-M2.5'], requestsPerMonth: 90000, requestsPerWeek: 45000, promptsPer5Hours: 6000, maxContextLength: 200000, contextWindow: '200K tokens', speed: '极速' },
     ],
     limits: {
-      requestsPerMonth: -1,
+      requestsPerMonth: 18000,
       tokensPerMonth: -1,
       maxContextLength: 128000,
-      promptsPer5Hours: '无明确限制',
+      promptsPer5Hours: '滚动5h+周限额',
     },
     modelSpecs: {
       params: '多模型集成',

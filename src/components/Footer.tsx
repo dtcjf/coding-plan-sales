@@ -52,28 +52,28 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="#plans"
+                  href="/"
                   className="hover:text-white transition-colors"
                 >
-                  方案对比
+                  方案
                 </a>
               </li>
               <li>
                 <a
-                  href="#comparison"
+                  href="/qa"
                   className="hover:text-white transition-colors"
                 >
-                  详细对比表
+                  Q&A
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  使用指南
+                <a href="/leaderboard" className="hover:text-white transition-colors">
+                  排行榜
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  常见问题
+                <a href="/openclaw" className="hover:text-white transition-colors">
+                  接入OpenClaw
                 </a>
               </li>
             </ul>
@@ -85,42 +85,32 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="https://www.anthropic.com/claude-pro"
+                  href="https://www.minimaxi.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  Claude Pro
+                  MiniMax
                 </a>
               </li>
               <li>
                 <a
-                  href="https://openai.com/chatgpt"
+                  href="https://www.moonshot.cn"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  ChatGPT Plus
+                  Moonshot AI
                 </a>
               </li>
               <li>
                 <a
-                  href="https://github.com/features/copilot"
+                  href="https://www.zhipuai.cn"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  GitHub Copilot
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://cursor.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  Cursor Pro
+                  智谱 AI
                 </a>
               </li>
             </ul>

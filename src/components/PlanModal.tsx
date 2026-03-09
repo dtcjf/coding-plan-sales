@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { CodingPlan } from '@/types';
 import { X, ExternalLink, Sparkles, Zap, DollarSign, Building2, Calendar, Trophy, Code2, CreditCard } from 'lucide-react';
 
@@ -10,6 +11,17 @@ interface PlanModalProps {
 }
 
 export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   if (!isOpen || !plan) return null;
 
   const formatNumber = (num: number) => {
