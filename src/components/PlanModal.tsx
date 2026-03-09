@@ -45,71 +45,6 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
 
         {/* Content */}
         <div className="p-6 overflow-y-auto max-h-[60vh]">
-          {/* 定价方案表格 */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">定价方案</h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-gray-200">
-                    <th className="text-left py-2 text-xs font-semibold text-gray-500 uppercase">档位</th>
-                    <th className="text-left py-2 text-xs font-semibold text-gray-500 uppercase">可用模型</th>
-                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">上下文</th>
-                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">请求/月</th>
-                    <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">月付</th>
-                    <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">年付</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {plan.pricingTiers?.map((tier, index) => (
-                    <tr key={index} className="border-b border-gray-100 last:border-0">
-                      <td className="py-3 text-gray-900 font-medium">
-                        {tier.name}
-                        {tier.description && <span className="text-gray-900 text-xs ml-1">({tier.description})</span>}
-                      </td>
-                      <td className="py-3 text-gray-600">
-                        {tier.models?.join(', ')}
-                      </td>
-                      <td className="py-3 text-center text-gray-600">
-                        {tier.contextWindow || '-'}
-                      </td>
-                      <td className="py-3 text-center text-gray-600">
-                        {tier.requestsPerMonth === -1 ? '无限' : formatNumber(tier.requestsPerMonth || 0)}
-                      </td>
-                      <td className="py-3 text-right font-semibold text-gray-900">¥{tier.monthly}</td>
-                      <td className="py-3 text-right font-semibold text-gray-900">¥{tier.yearly}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* 性价比分析 */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">性价比分析</h3>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="bg-blue-50 rounded-lg p-4 text-center">
-                <p className="text-2xl font-bold text-blue-600">
-                  ¥{plan.pricingTiers?.[0]?.monthly || plan.pricing.monthly}
-                </p>
-                <p className="text-sm text-gray-600">入门门槛</p>
-              </div>
-              <div className="bg-green-50 rounded-lg p-4 text-center">
-                <p className="text-2xl font-bold text-green-600">
-                  {plan.modelSpecs?.params || '-'}
-                </p>
-                <p className="text-sm text-gray-600">参数量</p>
-              </div>
-              <div className="bg-purple-50 rounded-lg p-4 text-center">
-                <p className="text-2xl font-bold text-purple-600">
-                  {plan.modelSpecs?.context || formatNumber(plan.limits.maxContextLength)}
-                </p>
-                <p className="text-sm text-gray-600">上下文</p>
-              </div>
-            </div>
-          </div>
-
           {/* 详细说明 */}
           {plan.notes && (
             <div className="mb-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5">
@@ -148,7 +83,7 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
           )}
 
           {/* 功能列表 */}
-          <div>
+          <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-3">核心功能</h3>
             <ul className="grid grid-cols-2 gap-2">
               {plan.features.map((feature, index) => (
@@ -158,6 +93,46 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* 定价方案表格 */}
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">定价方案</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-gray-200">
+                    <th className="text-left py-2 text-xs font-semibold text-gray-500 uppercase">档位</th>
+                    <th className="text-left py-2 text-xs font-semibold text-gray-500 uppercase">可用模型</th>
+                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">上下文</th>
+                    <th className="text-center py-2 text-xs font-semibold text-gray-500 uppercase">请求/月</th>
+                    <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">月付</th>
+                    <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">年付</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {plan.pricingTiers?.map((tier, index) => (
+                    <tr key={index} className="border-b border-gray-100 last:border-0">
+                      <td className="py-3 text-gray-900 font-medium">
+                        {tier.name}
+                        {tier.description && <span className="text-gray-900 text-xs ml-1">({tier.description})</span>}
+                      </td>
+                      <td className="py-3 text-gray-600">
+                        {tier.models?.join(', ')}
+                      </td>
+                      <td className="py-3 text-center text-gray-600">
+                        {tier.contextWindow || '-'}
+                      </td>
+                      <td className="py-3 text-center text-gray-600">
+                        {tier.requestsPerMonth === -1 ? '无限' : formatNumber(tier.requestsPerMonth || 0)}
+                      </td>
+                      <td className="py-3 text-right font-semibold text-gray-900">¥{tier.monthly}</td>
+                      <td className="py-3 text-right font-semibold text-gray-900">¥{tier.yearly}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
