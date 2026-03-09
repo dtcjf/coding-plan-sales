@@ -56,7 +56,7 @@ export function PlanModal({ plan, isOpen, onClose }: PlanModalProps) {
                 {plan.benchmark.lmArenaRank && (
                   <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-4 border border-orange-200 text-center">
                     <Trophy className="w-8 h-8 text-orange-500 mx-auto mb-2" />
-                    <p className="text-xs font-medium text-orange-600 uppercase tracking-wide">LM Arena 排名</p>
+                    <p className="text-xs font-medium text-orange-600 uppercase tracking-wide">LM Arena Code 排名</p>
                     <p className="text-2xl font-bold text-gray-900 mt-1">{plan.benchmark.lmArenaRank}</p>
                     {plan.benchmark.lmArenaUrl && (
                       <a
