@@ -48,7 +48,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                御三家 Coding Plan
+                国产「御三家」Coding Plan
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 点击下方卡片查看详情，使用推广链接注册可获得优惠
