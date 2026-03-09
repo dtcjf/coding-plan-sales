@@ -166,8 +166,8 @@ export const codingPlans: CodingPlan[] = [
       tier: 'Lite',
     },
     pricingTiers: [
-      { name: 'Lite', monthly: 7.9, yearly: 480, description: '首月特惠¥7.9', models: ['qwen3.5-plus', 'kimi-k2.5', 'GLM-5', 'MiniMax-M2.5'], requestsPerMonth: 18000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Pro', monthly: 39.9, yearly: 2400, description: '首月特惠¥39.9', models: ['qwen3.5-plus', 'kimi-k2.5', 'GLM-5', 'MiniMax-M2.5'], requestsPerMonth: 90000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
+      { name: 'Lite', monthly: 7.9, yearly: 480, description: '首月特惠¥7.9', models: ['Qwen3.5-Plus', 'Kimi-K2.5', 'GLM-5', 'MiniMax-M2.5'], requestsPerMonth: 18000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Pro', monthly: 39.9, yearly: 2400, description: '首月特惠¥39.9', models: ['Qwen3.5-Plus', 'Kimi-K2.5', 'GLM-5', 'MiniMax-M2.5'], requestsPerMonth: 90000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: 18000,
@@ -188,7 +188,7 @@ export const codingPlans: CodingPlan[] = [
       '专属 API Key (sk-sp-开头)',
       '固定月费，防范欠费风险',
     ],
-    models: ['qwen3.5-plus', 'kimi-k2.5', 'glm-5', 'minimax-m2.5', 'qwen3-max-2026-01-23', 'qwen3-coder-next', 'qwen3-coder-plus', 'glm-4.7'],
+    models: ['Qwen3.5-Plus', 'Kimi-K2.5', 'GLM-5', 'MiniMax-M2.5', 'Qwen3-Max-2026-01-23', 'Qwen3-Coder-Next', 'Qwen3-Coder-Plus', 'GLM-4.7'],
     affiliateLink: 'https://help.aliyun.com/zh/model-studio/coding-plan',
     affiliateCommission: '推广链接佣金',
     notes: {

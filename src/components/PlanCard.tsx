@@ -81,14 +81,34 @@ export function PlanCard({ plan }: PlanCardProps) {
         <div className="px-6 py-4 bg-gray-50">
           <p className="text-xs text-gray-500 mb-2">可调用模型</p>
           <div className="flex flex-wrap gap-1">
-            {plan.models?.map((model, index) => (
-              <span
-                key={index}
-                className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200"
-              >
-                {model}
-              </span>
-            ))}
+            {plan.models?.map((model, index) => {
+              // 为不同厂商的模型添加不同颜色标签
+              const isQwen = model.includes('Qwen');
+              const isKimi = model.includes('Kimi');
+              const isGLM = model.includes('GLM');
+              const isMiniMax = model.includes('MiniMax');
+              const isDoubao = model.includes('Doubao') || model.includes('豆包');
+              const isDeepSeek = model.includes('DeepSeek');
+              const isHunyuan = model.includes('Tencent') || model.includes('Hunyuan');
+
+              let badgeClass = 'bg-blue-50 text-blue-700 border-blue-200';
+              if (isQwen) badgeClass = 'bg-orange-50 text-orange-700 border-orange-200';
+              else if (isKimi) badgeClass = 'bg-purple-50 text-purple-700 border-purple-200';
+              else if (isGLM) badgeClass = 'bg-cyan-50 text-cyan-700 border-cyan-200';
+              else if (isMiniMax) badgeClass = 'bg-yellow-50 text-yellow-700 border-yellow-200';
+              else if (isDoubao) badgeClass = 'bg-red-50 text-red-700 border-red-200';
+              else if (isDeepSeek) badgeClass = 'bg-emerald-50 text-emerald-700 border-emerald-200';
+              else if (isHunyuan) badgeClass = 'bg-blue-50 text-blue-700 border-blue-200';
+
+              return (
+                <span
+                  key={index}
+                  className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium border ${badgeClass}`}
+                >
+                  {model}
+                </span>
+              );
+            })}
           </div>
         </div>
       ) : (
