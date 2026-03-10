@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/coding-plan-sales',
   reactStrictMode: true,
   images: {
     unoptimized: true,
