@@ -3,6 +3,7 @@ const nextConfig = {
   output: 'export',
   basePath: '/coding-plan-sales',
   assetPrefix: '/coding-plan-sales/',
+  trailingSlash: true,
   reactStrictMode: true,
   images: {
     unoptimized: true,

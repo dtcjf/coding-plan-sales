@@ -60,19 +60,19 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/qa"
+                  href="/qa/"
                   className="hover:text-white transition-colors"
                 >
                   Q&A
                 </a>
               </li>
               <li>
-                <a href="/leaderboard" className="hover:text-white transition-colors">
+                <a href="/leaderboard/" className="hover:text-white transition-colors">
                   排行榜
                 </a>
               </li>
               <li>
-                <a href="/openclaw" className="hover:text-white transition-colors">
+                <a href="/openclaw/" className="hover:text-white transition-colors">
                   接入OpenClaw
                 </a>
               </li>
