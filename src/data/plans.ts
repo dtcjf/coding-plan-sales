@@ -17,6 +17,10 @@ export const codingPlans: CodingPlan[] = [
       text: '限时9折',
       percentage: 90,
     },
+    badge: {
+      text: '重点推荐',
+      variant: 'info',
+    },
     pricingTiers: [
       { name: 'Starter', monthly: 26, yearly: 261, originalMonthly: 29, originalYearly: 290, description: '入门版', models: ['M2.5'], requestsPerMonth: -1, promptsPer5Hours: 40, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
       { name: 'Plus', monthly: 44, yearly: 441, originalMonthly: 49, originalYearly: 490, description: '标准版', models: ['M2.5'], requestsPerMonth: -1, promptsPer5Hours: 100, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
@@ -58,10 +62,6 @@ export const codingPlans: CodingPlan[] = [
       lmArenaRank: '第 13 名',
       lmArenaUrl: 'https://lmarena.ai',
       sweBenchVerified: '75.8%',
-    },
-    badge: {
-      text: '余量充足',
-      variant: 'success',
     },
   },
   {

@@ -9,6 +9,7 @@ pnpm-lock.yaml
 # Build output
 dist/
 build/
+out/
 *.tsbuildinfo
 
 # Environment variables
