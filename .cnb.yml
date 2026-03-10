@@ -1,8 +1,12 @@
 # 云原生构建 CI/CD 配置
 # 当代码推送到 main 分支时，自动运行构建任务
 
-main:
-  push:
-    - stages:
+main: # 目标分支
+  push: # 触发事件
+    - docker:
+        image: node:22 # 流水线执行环境，可使用任意 Docker 镜像
+      stages:
+        - name: install
+          script: npm install
         - name: build
           script: npm run build
