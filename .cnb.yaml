@@ -1,0 +1,8 @@
+# 分支名
+main:
+  # 事件名
+  push:
+    # 要执行的任务
+    - stages:
+        - name: echo-hello
+          script: echo "hello world"
