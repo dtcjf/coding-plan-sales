@@ -8,7 +8,7 @@ import { useState } from 'react';
 const providers = [
   {
     name: 'MiniMax',
-    logo: '/logos/minimax.ico',
+    logo: '/coding-plan-sales/logos/minimax.ico',
     baseUrl: 'https://api.minimax.chat/v1',
     apiKeyFormat: 'sk-xxx...',
     docsUrl: 'https://platform.minimaxi.com/docs/llms.txt',
@@ -44,7 +44,7 @@ const providers = [
   },
   {
     name: 'Moonshot AI',
-    logo: '/logos/moonshot.ico',
+    logo: '/coding-plan-sales/logos/moonshot.ico',
     baseUrl: 'https://api.moonshot.cn/v1',
     apiKeyFormat: 'sk-xxx...',
     docsUrl: 'https://platform.moonshot.cn/',
@@ -82,7 +82,7 @@ const providers = [
   },
   {
     name: '智谱 GLM',
-    logo: '/logos/zhipuai.svg',
+    logo: '/coding-plan-sales/logos/zhipuai.svg',
     baseUrl: 'https://open.bigmodel.cn/api/paas/v4',
     apiKeyFormat: 'xxx...',
     docsUrl: 'https://docs.bigmodel.cn/cn/guide/develop/',

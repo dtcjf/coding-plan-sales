@@ -10,12 +10,12 @@ interface PlanCardProps {
 }
 
 const providerLogos: Record<string, string> = {
-  'MiniMax': '/logos/minimax.ico',
-  'Moonshot AI': '/logos/moonshot.ico',
-  '智谱': '/logos/zhipuai.svg',
-  'Cursor': '/logos/cursor.png',
-  'Codeium': '/logos/windsurf.ico',
-  'Tabnine': '/logos/tabnine.svg',
+  'MiniMax': '/coding-plan-sales/logos/minimax.ico',
+  'Moonshot AI': '/coding-plan-sales/logos/moonshot.ico',
+  '智谱': '/coding-plan-sales/logos/zhipuai.svg',
+  'Cursor': '/coding-plan-sales/logos/cursor.png',
+  'Codeium': '/coding-plan-sales/logos/windsurf.ico',
+  'Tabnine': '/coding-plan-sales/logos/tabnine.svg',
 };
 
 export function PlanCard({ plan }: PlanCardProps) {

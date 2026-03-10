@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export',
   basePath: '/coding-plan-sales',
+  assetPrefix: '/coding-plan-sales/',
   reactStrictMode: true,
   images: {
     unoptimized: true,
