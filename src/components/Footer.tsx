@@ -52,7 +52,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="/"
+                  href="/coding-plan-sales/"
                   className="hover:text-white transition-colors"
                 >
                   方案
