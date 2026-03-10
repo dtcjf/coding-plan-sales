@@ -21,6 +21,19 @@ const providerLogos: Record<string, string> = {
 export function PlanCard({ plan }: PlanCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const getBadgeStyles = (variant: string) => {
+    switch (variant) {
+      case 'success':
+        return 'bg-green-100 text-green-700 border-green-200';
+      case 'warning':
+        return 'bg-yellow-100 text-yellow-700 border-yellow-200';
+      case 'danger':
+        return 'bg-red-100 text-red-700 border-red-200';
+      default:
+        return 'bg-blue-100 text-blue-700 border-blue-200';
+    }
+  };
+
   const formatPrice = (price: number, currency: string = 'USD') => {
     if (price === 0) return '免费';
     if (currency === 'CNY') return `¥${price}`;
@@ -49,9 +62,16 @@ export function PlanCard({ plan }: PlanCardProps) {
               />
             )}
             <div>
-              <p className="text-sm font-medium text-gray-500 mb-1">
-                {plan.provider}
-              </p>
+              <div className="flex items-center gap-2">
+                <p className="text-sm font-medium text-gray-500 mb-1">
+                  {plan.provider}
+                </p>
+                {plan.badge && (
+                  <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border ${getBadgeStyles(plan.badge.variant)}`}>
+                    {plan.badge.text}
+                  </span>
+                )}
+              </div>
               <h3 className="text-xl font-bold text-gray-900">{plan.name}</h3>
             </div>
           </div>
@@ -60,11 +80,27 @@ export function PlanCard({ plan }: PlanCardProps) {
         {/* Price */}
         <div className="flex items-baseline gap-2">
           <span className="text-sm text-gray-400">低至</span>
-          <span className="text-3xl font-bold text-gray-900">
-            {formatPrice(plan.pricing.monthly, plan.pricing.currency)}
-          </span>
+          {plan.pricing.originalMonthly ? (
+            <>
+              <span className="text-3xl font-bold text-red-600">
+                {formatPrice(plan.pricing.monthly, plan.pricing.currency)}
+              </span>
+              <span className="text-lg text-gray-400 line-through">
+                {formatPrice(plan.pricing.originalMonthly, plan.pricing.currency)}
+              </span>
+            </>
+          ) : (
+            <span className="text-3xl font-bold text-gray-900">
+              {formatPrice(plan.pricing.monthly, plan.pricing.currency)}
+            </span>
+          )}
           <span className="text-gray-500">/月</span>
-          {plan.pricing.tier && (
+          {plan.discount && (
+            <span className="text-sm bg-red-100 text-red-600 px-2 py-0.5 rounded font-medium">
+              {plan.discount.text}
+            </span>
+          )}
+          {plan.pricing.tier && !plan.discount && (
             <span className="text-sm bg-gray-100 text-gray-600 px-2 py-0.5 rounded">
               {plan.pricing.tier}
             </span>
@@ -143,7 +179,12 @@ export function PlanCard({ plan }: PlanCardProps) {
                 <tr className="border-b border-gray-200">
                   <th className="text-left py-2 text-xs font-semibold text-gray-500 uppercase">档位</th>
                   <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">月付</th>
-                  <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">年付</th>
+                  {['智谱', '火山引擎'].includes(plan.provider) && (
+                    <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">季付</th>
+                  )}
+                  {plan.provider !== '火山引擎' && (
+                    <th className="text-right py-2 text-xs font-semibold text-gray-500 uppercase">年付</th>
+                  )}
                 </tr>
               </thead>
               <tbody>
@@ -153,8 +194,44 @@ export function PlanCard({ plan }: PlanCardProps) {
                       {tier.name}
                       {tier.description && <span className="text-gray-900 text-xs ml-1">({tier.description})</span>}
                     </td>
-                    <td className="text-right py-2 font-semibold text-gray-900">¥{tier.monthly}</td>
-                    <td className="text-right py-2 font-semibold text-gray-900">¥{tier.yearly}</td>
+                    <td className="text-right py-2">
+                      {tier.originalMonthly ? (
+                        <>
+                          <span className="font-semibold text-red-600">¥{tier.monthly}</span>
+                          <span className="text-gray-400 line-through text-xs ml-1">¥{tier.originalMonthly}</span>
+                        </>
+                      ) : (
+                        <span className="font-semibold text-gray-900">¥{tier.monthly}</span>
+                      )}
+                    </td>
+                    {['智谱', '火山引擎'].includes(plan.provider) && (
+                      <td className="text-right py-2">
+                        {tier.quarterly ? (
+                          tier.originalQuarterly ? (
+                            <>
+                              <span className="font-semibold text-red-600">¥{tier.quarterly}</span>
+                              <span className="text-gray-400 line-through text-xs ml-1">¥{tier.originalQuarterly}</span>
+                            </>
+                          ) : (
+                            <span className="font-semibold text-gray-900">¥{tier.quarterly}</span>
+                          )
+                        ) : (
+                          <span className="text-gray-400">-</span>
+                        )}
+                      </td>
+                    )}
+                    {plan.provider !== '火山引擎' && (
+                      <td className="text-right py-2">
+                        {tier.originalYearly ? (
+                          <>
+                            <span className="font-semibold text-red-600">¥{tier.yearly}</span>
+                            <span className="text-gray-400 line-through text-xs ml-1">¥{tier.originalYearly}</span>
+                          </>
+                        ) : (
+                          <span className="font-semibold text-gray-900">¥{tier.yearly}</span>
+                        )}
+                      </td>
+                    )}
                   </tr>
                 ))}
               </tbody>

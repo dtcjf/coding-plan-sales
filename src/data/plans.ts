@@ -6,18 +6,24 @@ export const codingPlans: CodingPlan[] = [
     name: 'MiniMax Coding Plan',
     provider: 'MiniMax',
     pricing: {
-      monthly: 29,
-      yearly: 290,
+      monthly: 26.1,
+      yearly: 261,
+      originalMonthly: 29,
+      originalYearly: 290,
       currency: 'CNY',
       tier: 'Starter',
     },
+    discount: {
+      text: '限时9折',
+      percentage: 90,
+    },
     pricingTiers: [
-      { name: 'Starter', monthly: 29, yearly: 290, description: '入门版', models: ['M2.5'], requestsPerMonth: -1, promptsPer5Hours: 40, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Plus', monthly: 49, yearly: 490, description: '标准版', models: ['M2.5'], requestsPerMonth: -1, promptsPer5Hours: 100, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Max', monthly: 119, yearly: 1190, description: '高级版', models: ['M2.5'], requestsPerMonth: -1, promptsPer5Hours: 300, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Plus 极速版', monthly: 98, yearly: 980, description: '极速版 100+TPS', models: ['M2.5-highspeed'], requestsPerMonth: -1, promptsPer5Hours: 100, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
-      { name: 'Max 极速版', monthly: 199, yearly: 1990, description: '极速版 100+TPS', models: ['M2.5-highspeed'], requestsPerMonth: -1, promptsPer5Hours: 300, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
-      { name: 'Ultra 极速版', monthly: 899, yearly: 8990, description: '极速版 100+TPS', models: ['M2.5-highspeed'], requestsPerMonth: -1, promptsPer5Hours: 2000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
+      { name: 'Starter', monthly: 26, yearly: 261, originalMonthly: 29, originalYearly: 290, description: '入门版', models: ['M2.5'], requestsPerMonth: -1, promptsPer5Hours: 40, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Plus', monthly: 44, yearly: 441, originalMonthly: 49, originalYearly: 490, description: '标准版', models: ['M2.5'], requestsPerMonth: -1, promptsPer5Hours: 100, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Max', monthly: 107, yearly: 1071, originalMonthly: 119, originalYearly: 1190, description: '高级版', models: ['M2.5'], requestsPerMonth: -1, promptsPer5Hours: 300, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Plus 极速版', monthly: 88, yearly: 882, originalMonthly: 98, originalYearly: 980, description: '极速版 100+TPS', models: ['M2.5-highspeed'], requestsPerMonth: -1, promptsPer5Hours: 100, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
+      { name: 'Max 极速版', monthly: 179, yearly: 1791, originalMonthly: 199, originalYearly: 1990, description: '极速版 100+TPS', models: ['M2.5-highspeed'], requestsPerMonth: -1, promptsPer5Hours: 300, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
+      { name: 'Ultra 极速版', monthly: 809, yearly: 8091, originalMonthly: 899, originalYearly: 8990, description: '极速版 100+TPS', models: ['M2.5-highspeed'], requestsPerMonth: -1, promptsPer5Hours: 2000, maxContextLength: 128000, contextWindow: '128K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: -1,
@@ -33,13 +39,13 @@ export const codingPlans: CodingPlan[] = [
     },
     features: [
       'MiniMax M2.5 (high reasoning) 模型',
-      'Starter 入门版 ¥29/月',
+      'Starter 入门版 ¥26/月(原价¥29)',
+      'Plus/极速版 多档可选',
       'SWE-bench 75.8% 解决率',
       '多轮对话编程',
-      '代码理解与生成',
     ],
     models: ['minimax-m2.5'],
-    affiliateLink: 'https://www.minimax.cn',
+    affiliateLink: 'https://platform.minimaxi.com/subscribe/coding-plan?code=2nYObUph21&source=link',
     affiliateCommission: '推广链接佣金',
     notes: {
       modelIntro: 'MiniMax M2.5 是编码与智能体领域 SOTA 模型，专为 Agent Universe 设计。显著增强多语言编程能力，专为高吞吐、低延迟的生产环境设计。',
@@ -52,6 +58,10 @@ export const codingPlans: CodingPlan[] = [
       lmArenaRank: '第 13 名',
       lmArenaUrl: 'https://lmarena.ai',
       sweBenchVerified: '75.8%',
+    },
+    badge: {
+      text: '余量充足',
+      variant: 'success',
     },
   },
   {
@@ -92,7 +102,7 @@ export const codingPlans: CodingPlan[] = [
       '代码审查功能',
     ],
     models: ['kimi-k2.5'],
-    affiliateLink: 'https://www.moonshot.cn',
+    affiliateLink: 'https://www.kimi.com/code',
     affiliateCommission: '推广链接佣金',
     notes: {
       modelIntro: 'Kimi K2.5 是 Kimi 迄今最智能的模型，在 Agent、代码、视觉理解及一系列通用智能任务上取得开源 SoTA 表现。原生的多模态架构设计，同时支持视觉与文本输入、思考与非思考模式、对话与 Agent 任务。',
@@ -106,21 +116,33 @@ export const codingPlans: CodingPlan[] = [
       lmArenaUrl: 'https://lmarena.ai',
       sweBenchVerified: '70.8%',
     },
+    badge: {
+      text: '余量充足',
+      variant: 'success',
+    },
   },
   {
     id: 'glm',
     name: 'GLM Coding Plan',
     provider: '智谱',
     pricing: {
-      monthly: 49,
-      yearly: 411,
+      monthly: 44,
+      quarterly: 119,
+      yearly: 370,
+      originalMonthly: 49,
+      originalQuarterly: 147,
+      originalYearly: 588,
       currency: 'CNY',
       tier: 'Lite',
     },
+    discount: {
+      text: '限时9折',
+      percentage: 90,
+    },
     pricingTiers: [
-      { name: 'Lite', monthly: 49, yearly: 411, description: '轻量版', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 400, requestsPerWeek: 400, promptsPer5Hours: 80, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
-      { name: 'Pro', monthly: 149, yearly: 1251, description: '专业版', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 2000, requestsPerWeek: 2000, promptsPer5Hours: 400, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
-      { name: 'Max', monthly: 469, yearly: 3939, description: '旗舰版', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 8000, requestsPerWeek: 8000, promptsPer5Hours: 1600, maxContextLength: 200000, contextWindow: '200K tokens', speed: '极速' },
+      { name: 'Lite', monthly: 44, quarterly: 119, yearly: 370, originalMonthly: 49, originalQuarterly: 147, originalYearly: 588, description: '轻量版', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 400, requestsPerWeek: 400, promptsPer5Hours: 80, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
+      { name: 'Pro', monthly: 134, quarterly: 362, yearly: 1126, originalMonthly: 149, originalQuarterly: 447, originalYearly: 1788, description: '专业版', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 2000, requestsPerWeek: 2000, promptsPer5Hours: 400, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
+      { name: 'Max', monthly: 422, quarterly: 1140, yearly: 3546, originalMonthly: 469, originalQuarterly: 1407, originalYearly: 5628, description: '旗舰版', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 8000, requestsPerWeek: 8000, promptsPer5Hours: 1600, maxContextLength: 200000, contextWindow: '200K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: -1,
@@ -142,7 +164,7 @@ export const codingPlans: CodingPlan[] = [
       '企业级支持',
     ],
     models: ['glm-5'],
-    affiliateLink: 'https://www.zhipuai.cn',
+    affiliateLink: 'https://www.bigmodel.cn/glm-coding?ic=LWDABTT1QN',
     affiliateCommission: '推广链接佣金',
     notes: {
       modelIntro: 'GLM-5 是智谱新一代旗舰大模型，参数规模达 744B，激活参数 40B。在推理、代码和智能体能力等方面达到开源模型 SOTA 水平，全球排名第四、开源第一。',
@@ -155,6 +177,10 @@ export const codingPlans: CodingPlan[] = [
       lmArenaRank: '第 8 名',
       lmArenaUrl: 'https://lmarena.ai',
       sweBenchVerified: '72.8%',
+    },
+    badge: {
+      text: '余量紧张，每日抢购',
+      variant: 'danger',
     },
   },
   // 云厂商 Coding Plan
@@ -193,7 +219,7 @@ export const codingPlans: CodingPlan[] = [
       '固定月费，防范欠费风险',
     ],
     models: ['Qwen3.5-Plus', 'Kimi-K2.5', 'GLM-5', 'MiniMax-M2.5', 'Qwen3-Max-2026-01-23', 'Qwen3-Coder-Next', 'Qwen3-Coder-Plus', 'GLM-4.7'],
-    affiliateLink: 'https://help.aliyun.com/zh/model-studio/coding-plan',
+    affiliateLink: 'https://www.aliyun.com/benefit/scene/codingplan',
     affiliateCommission: '推广链接佣金',
     notes: {
       modelIntro: '阿里云 Coding Plan 整合千问、GLM、Kimi、MiniMax 四大国产顶尖模型，一次订阅即可在多模型间按需切换。',
@@ -202,20 +228,32 @@ export const codingPlans: CodingPlan[] = [
       enterprise: '专属 API Key 和 Base URL，支持企业级调用，需遵守仅限编程工具使用的规定',
       subscribe: '不支持退款，仅限编程工具使用，禁止用于 API 调用、自动化脚本或批量调用场景',
     },
+    badge: {
+      text: '余量紧张，每日抢购',
+      variant: 'danger',
+    },
   },
   {
     id: 'volcengine-coding-plan',
     name: '火山方舟 Coding Plan',
     provider: '火山引擎',
     pricing: {
-      monthly: 9.9,
-      yearly: 480,
+      monthly: 8.91,
+      quarterly: 54,
+      yearly: 216,
+      originalMonthly: 9.9,
+      originalQuarterly: 60,
+      originalYearly: 240,
       currency: 'CNY',
       tier: 'Lite',
     },
+    discount: {
+      text: '限时9折',
+      percentage: 90,
+    },
     pricingTiers: [
-      { name: 'Lite', monthly: 8.91, yearly: 480, description: '入门版', models: ['Doubao-Seed-2.0-Code', 'Doubao-Seed-Code', 'Kimi-K2.5', 'Kimi-K2', 'GLM-4.7', 'DeepSeek-V3.2', 'MiniMax-M2.5'], requestsPerMonth: 18000, requestsPerWeek: 9000, promptsPer5Hours: 1200, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
-      { name: 'Pro', monthly: 44.91, yearly: 2400, description: '进阶版', models: ['Doubao-Seed-2.0-Code', 'Doubao-Seed-Code', 'Kimi-K2.5', 'Kimi-K2', 'GLM-4.7', 'DeepSeek-V3.2', 'MiniMax-M2.5'], requestsPerMonth: 90000, requestsPerWeek: 45000, promptsPer5Hours: 6000, maxContextLength: 200000, contextWindow: '200K tokens', speed: '极速' },
+      { name: 'Lite', monthly: 8.91, quarterly: 54, yearly: 216, originalMonthly: 9.9, originalQuarterly: 60, originalYearly: 240, description: '入门版', models: ['Doubao-Seed-2.0-Code', 'Doubao-Seed-Code', 'Kimi-K2.5', 'Kimi-K2', 'GLM-4.7', 'DeepSeek-V3.2', 'MiniMax-M2.5'], requestsPerMonth: 18000, requestsPerWeek: 9000, promptsPer5Hours: 1200, maxContextLength: 128000, contextWindow: '128K tokens', speed: '标准' },
+      { name: 'Pro', monthly: 44.91, quarterly: 270, yearly: 1080, originalMonthly: 49.9, originalQuarterly: 300, originalYearly: 1200, description: '进阶版', models: ['Doubao-Seed-2.0-Code', 'Doubao-Seed-Code', 'Kimi-K2.5', 'Kimi-K2', 'GLM-4.7', 'DeepSeek-V3.2', 'MiniMax-M2.5'], requestsPerMonth: 90000, requestsPerWeek: 45000, promptsPer5Hours: 6000, maxContextLength: 200000, contextWindow: '200K tokens', speed: '极速' },
     ],
     limits: {
       requestsPerMonth: 18000,
@@ -237,7 +275,7 @@ export const codingPlans: CodingPlan[] = [
       '首月价格低至 2.2 折',
     ],
     models: ['Doubao-Seed-2.0-Code', 'Doubao-Seed-2.0-pro', 'Doubao-Seed-2.0-lite', 'Doubao-Seed-Code', 'MiniMax-M2.5', 'Kimi-K2.5', 'GLM-4.7', 'DeepSeek-V3.2'],
-    affiliateLink: 'https://www.volcengine.com/docs/82379/1925114',
+    affiliateLink: 'https://volcengine.com/L/dnQpXsXjEkM/',
     affiliateCommission: '推广链接佣金',
     notes: {
       modelIntro: '火山方舟 Coding Plan 整合豆包、DeepSeek、Kimi、GLM 等多款国产顶尖模型，一次订阅即可在多模型间按需切换。',
@@ -245,6 +283,10 @@ export const codingPlans: CodingPlan[] = [
       price: 'Lite 首月¥8.91（续费¥40/月），Pro 首月¥44.91（续费¥200/月），2月下单次月再享5折',
       enterprise: '专属 API Key，支持企业级调用，需遵守仅限编程工具使用的规定',
       subscribe: '不支持退款，仅限编程工具使用，禁止用于 API 调用、自动化脚本或批量调用场景',
+    },
+    badge: {
+      text: '余量充足',
+      variant: 'success',
     },
   },
   {
@@ -281,7 +323,7 @@ export const codingPlans: CodingPlan[] = [
       '200ms 级低延迟，微信生态深度集成',
     ],
     models: ['Tencent HY 2.0 Instruct', 'Tencent HY 2.0 Think', 'Hunyuan-T1', 'Hunyuan-TurboS', 'MiniMax-M2.5', 'Kimi-K2.5', 'GLM-5'],
-    affiliateLink: 'https://cloud.tencent.com/document/product/1772/128947',
+    affiliateLink: 'https://cloud.tencent.com/act/pro/codingplan',
     affiliateCommission: '推广链接佣金',
     notes: {
       modelIntro: '腾讯云 Coding Plan 整合混元、MiniMax、Kimi、GLM 四大国产顶尖模型，支持 Auto 模式自动选择最优模型。',
@@ -289,6 +331,10 @@ export const codingPlans: CodingPlan[] = [
       price: 'Lite 首月¥7.9（次月¥20，第3月起¥40/月），Pro 首月¥39.9（次月¥100，第3月起¥200/月），5h+周+月三重限额',
       enterprise: '专属 API Key 和 Base URL，支持 OpenAI/Anthropic 兼容格式，需遵守仅限编程工具使用的规定',
       subscribe: '不支持退款，仅限编程工具使用，禁止 API 调用形式用于自动化脚本或批量调用场景',
+    },
+    badge: {
+      text: '余量紧张，每日抢购',
+      variant: 'danger',
     },
   },
 ];

@@ -1,7 +1,11 @@
 export interface PricingTier {
   name: string;
   monthly: number;
+  quarterly?: number;
   yearly: number;
+  originalMonthly?: number;
+  originalQuarterly?: number;
+  originalYearly?: number;
   description?: string;
   models?: string[];
   requestsPerMonth?: number;
@@ -21,6 +25,8 @@ export interface CodingPlan {
   pricing: {
     monthly: number;
     yearly: number;
+    originalMonthly?: number;
+    originalYearly?: number;
     currency: string;
     tier?: string;
   };
@@ -54,6 +60,14 @@ export interface CodingPlan {
     lmArenaRank?: string;
     lmArenaUrl?: string;
     sweBenchVerified?: string;
+  };
+  badge?: {
+    text: string;
+    variant: 'success' | 'warning' | 'info' | 'danger';
+  };
+  discount?: {
+    text: string;
+    percentage?: number;
   };
 }
 
