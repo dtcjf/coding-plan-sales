@@ -24,8 +24,10 @@ export interface CodingPlan {
   logo?: string;
   pricing: {
     monthly: number;
+    quarterly?: number;
     yearly: number;
     originalMonthly?: number;
+    originalQuarterly?: number;
     originalYearly?: number;
     currency: string;
     tier?: string;
