@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Code2, Github, Twitter, Mail } from 'lucide-react';
 
 export function Footer() {
@@ -51,30 +52,30 @@ export function Footer() {
             <h3 className="text-white font-semibold mb-4">快速链接</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
-                  href="/coding-plan-sales/"
+                <Link
+                  href="/"
                   className="hover:text-white transition-colors"
                 >
                   方案
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/coding-plan-sales/qa/"
+                <Link
+                  href="/qa/"
                   className="hover:text-white transition-colors"
                 >
                   Q&A
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/coding-plan-sales/leaderboard/" className="hover:text-white transition-colors">
+                <Link href="/leaderboard/" className="hover:text-white transition-colors">
                   排行榜
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/coding-plan-sales/openclaw/" className="hover:text-white transition-colors">
+                <Link href="/openclaw/" className="hover:text-white transition-colors">
                   接入OpenClaw
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

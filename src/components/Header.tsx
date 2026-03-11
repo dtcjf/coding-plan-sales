@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Menu, X, Code2 } from 'lucide-react';
 
 export function Header() {
@@ -20,30 +21,30 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a
-              href="/coding-plan-sales/"
+            <Link
+              href="/"
               className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               方案
-            </a>
-            <a
-              href="/coding-plan-sales/qa/"
+            </Link>
+            <Link
+              href="/qa/"
               className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Q&A
-            </a>
-            <a
-              href="/coding-plan-sales/leaderboard/"
+            </Link>
+            <Link
+              href="/leaderboard/"
               className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               排行榜
-            </a>
-            <a
-              href="/coding-plan-sales/openclaw/"
+            </Link>
+            <Link
+              href="/openclaw/"
               className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               接入OpenClaw
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -66,34 +67,34 @@ export function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a
-              href="/coding-plan-sales/"
+            <Link
+              href="/"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
               方案
-            </a>
-            <a
-              href="/coding-plan-sales/qa/"
+            </Link>
+            <Link
+              href="/qa/"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
               Q&A
-            </a>
-            <a
-              href="/coding-plan-sales/leaderboard/"
+            </Link>
+            <Link
+              href="/leaderboard/"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
               排行榜
-            </a>
-            <a
-              href="/coding-plan-sales/openclaw/"
+            </Link>
+            <Link
+              href="/openclaw/"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
               接入OpenClaw
-            </a>
+            </Link>
           </div>
         </div>
       )}
