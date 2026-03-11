@@ -2,9 +2,8 @@
 const nextConfig = {
   output: 'export',
   // 设置 basePath 用于 GitHub Pages 部署
-  // 如果部署到其他位置，设置为空字符串 ''
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '/coding-plan-sales',
-  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH ? process.env.NEXT_PUBLIC_BASE_PATH + '/' : '/coding-plan-sales/',
+  basePath: '/coding-plan-sales',
+  assetPrefix: '/coding-plan-sales/',
   trailingSlash: true,
   reactStrictMode: true,
   images: {
