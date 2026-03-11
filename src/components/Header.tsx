@@ -27,19 +27,19 @@ export function Header() {
               方案
             </a>
             <a
-              href="qa/"
+              href="/qa/"
               className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Q&A
             </a>
             <a
-              href="leaderboard/"
+              href="/leaderboard/"
               className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               排行榜
             </a>
             <a
-              href="openclaw/"
+              href="/openclaw/"
               className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               接入OpenClaw
@@ -74,21 +74,21 @@ export function Header() {
               方案
             </a>
             <a
-              href="qa/"
+              href="/qa/"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
               Q&A
             </a>
             <a
-              href="leaderboard/"
+              href="/leaderboard/"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
               排行榜
             </a>
             <a
-              href="openclaw/"
+              href="/openclaw/"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
