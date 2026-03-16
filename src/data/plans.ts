@@ -140,7 +140,7 @@ export const codingPlans: CodingPlan[] = [
       percentage: 90,
     },
     pricingTiers: [
-      { name: 'Lite', monthly: 44, quarterly: 119, yearly: 370, originalMonthly: 49, originalQuarterly: 147, originalYearly: 588, description: '轻量版', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 400, requestsPerWeek: 400, promptsPer5Hours: 80, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
+      { name: 'Lite', monthly: 44, quarterly: 119, yearly: 370, originalMonthly: 49, originalQuarterly: 147, originalYearly: 588, description: '轻量版（暂不支持GLM-5）', models: ['GLM-4.7', 'GLM-4.6'], requestsPerMonth: 400, requestsPerWeek: 400, promptsPer5Hours: 80, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
       { name: 'Pro', monthly: 134, quarterly: 362, yearly: 1126, originalMonthly: 149, originalQuarterly: 447, originalYearly: 1788, description: '专业版', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 2000, requestsPerWeek: 2000, promptsPer5Hours: 400, maxContextLength: 200000, contextWindow: '200K tokens', speed: '标准' },
       { name: 'Max', monthly: 422, quarterly: 1140, yearly: 3546, originalMonthly: 469, originalQuarterly: 1407, originalYearly: 5628, description: '旗舰版', models: ['GLM-5', 'GLM-4.7', 'GLM-4.6'], requestsPerMonth: 8000, requestsPerWeek: 8000, promptsPer5Hours: 1600, maxContextLength: 200000, contextWindow: '200K tokens', speed: '极速' },
     ],
@@ -157,7 +157,7 @@ export const codingPlans: CodingPlan[] = [
       highlightParams: true,
     },
     features: [
-      'GLM-5 (high reasoning) 模型',
+      'GLM-5 (high reasoning) 模型（Lite暂不支持，4月内上线）',
       'Lite 轻量版 ¥49/月',
       'SWE-bench 72.8% 解决率',
       '中文优化',
