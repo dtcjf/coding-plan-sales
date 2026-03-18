@@ -49,7 +49,7 @@ export const codingPlans: CodingPlan[] = [
       '多轮对话编程',
     ],
     models: ['minimax-m2.5'],
-    affiliateLink: 'https://platform.minimaxi.com/subscribe/coding-plan?code=2nYObUph21&source=link',
+    affiliateLink: 'https://platform.minimaxi.com/subscribe/token-plan?code=2nYObUph21&source=link',
     affiliateCommission: '推广链接佣金',
     notes: {
       modelIntro: 'MiniMax M2.5 是编码与智能体领域 SOTA 模型，专为 Agent Universe 设计。显著增强多语言编程能力，专为高吞吐、低延迟的生产环境设计。',
